@@ -7,6 +7,7 @@ import Trash from '../Icons/Trash';
 import Launch from '../Icons/Launch';
 import Camera from '../Icons/Camera';
 import Close from '../Icons/Close';
+import Mirror from '../Icons/MirRor';
 
 interface FacingMode {
     exact: 'user' | 'environment'
@@ -67,8 +68,8 @@ const CustomWebcam = ({ callback, close }: Props) => {
             )}
             <div className='absolute top-5 right-5 cursor-pointer text-white' onClick={close}><Close /></div>
             <div className="absolute bottom-5 left-5">
-                <label className="flex flex-col cursor-pointer gap-2">
-                    <span className="text-sm font-medium text-white">Modo espejo</span>
+                <label className="flex cursor-pointer gap-2 text-white">
+                    <Mirror />
                     <input type="checkbox" checked={mirrored} onChange={(e) => setMirrored(e.target.checked)} className="sr-only peer" />
                     <div className="relative w-11 h-6 peer-focus:outline-none rounded-full bg-gray-400 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-slate-800"></div>
                 </label>
@@ -76,25 +77,25 @@ const CustomWebcam = ({ callback, close }: Props) => {
             <div className='absolute bottom-5 right-5'>
                 <button onClick={flip} type="button" className="bg-slate-800 border-2 font-extrabold rounded-full text-sm p-2.5 text-center inline-flex items-center border-white text-white">
                     <Flip />
-                    <span className="sr-only">Icon description</span>
+                    <span className="sr-only">Flip</span>
                 </button>
             </div>
-            <div className="flex gap-5 absolute bottom-10 left-1/2 transform -translate-x-1/2">
+            <div className="flex gap-5 absolute bottom-7 left-1/2 transform -translate-x-1/2">
                 {imgSrc ? (
                     <>
                         <button onClick={retake} type="button" className="bg-red-600 border-2 focus:outline-none font-extrabold rounded-full text-sm p-2.5 text-center inline-flex items-center border-white text-white">
                             <Trash />
-                            <span className="sr-only">Icon description</span>
+                            <span className="sr-only">Trash</span>
                         </button>
                         <button onClick={launchImage} type="button" className="bg-green-600 border-2 focus:outline-none font-extrabold rounded-full text-sm p-2.5 text-center inline-flex items-center border-white text-white">
                             <Launch />
-                            <span className="sr-only">Icon description</span>
+                            <span className="sr-only">Launch</span>
                         </button>
                     </>
                 ) : (
-                    <button onClick={capture} type="button" className="bg-white border-2 focus:outline-none font-extrabold rounded-full text-sm p-2.5 text-center inline-flex items-center border-slate-400 text-blue-400">
+                    <button onClick={capture} type="button" className="bg-slate-800 border-2 font-extrabold rounded-full text-sm p-2.5 text-center inline-flex items-center border-white text-white">
                         <Camera />
-                        <span className="sr-only">Icon description</span>
+                        <span className="sr-only">Camera</span>
                     </button>
                 )}
             </div>

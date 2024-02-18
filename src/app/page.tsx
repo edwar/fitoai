@@ -36,7 +36,7 @@ export default function Home() {
   }
 
   return (
-    <main className="flex max-h-screen flex-col">
+    <main className={`${message && "overflow-hidden"} flex max-h-screen flex-col`}>
       {showCamera ?
         <CustomWebcam callback={handlerIA} close={() => setShowCamera(false)} />
       :
