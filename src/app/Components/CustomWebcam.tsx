@@ -1,17 +1,21 @@
 "use client"
 import React, { useCallback, useRef, useState } from 'react'
 import Webcam from "react-webcam";
-import Camera from "@/app/Icons/Camera"
-import Trash from '@/app/Icons/Trash';
-import Launch from '@/app/Icons/Launch';
-import Flip from '@/app/Icons/Flip';
+import Camera from "@/app/icons/camera"
+import Trash from '@/app/icons/trash';
+import Launch from '@/app/icons/launch';
+import Flip from '@/app/icons/flip';
 import { isMobile } from 'react-device-detect';
 
 interface FacingMode {
     exact: 'user' | 'environment'
 }
 
-const CustomWebcam = () => {
+interface Props {
+    callback: (base64: string) => void
+}
+
+const CustomWebcam = ({ callback }: Props) => {
     const webcamRef = useRef<Webcam & HTMLVideoElement>(null);
     const [imgSrc, setImgSrc] = useState("");
     const [mirrored, setMirrored] = useState(false);
@@ -38,6 +42,10 @@ const CustomWebcam = () => {
         setFlipState(!flipState)
     }
 
+    const launchImage = () => {
+        callback(imgSrc)
+    }
+
     return (
         <div className='w-full h-screen'>
             {imgSrc ? (
@@ -49,7 +57,7 @@ const CustomWebcam = () => {
                     screenshotFormat="image/jpeg"
                     ref={webcamRef}
                     mirrored={mirrored}
-                    screenshotQuality={0.8}
+                    screenshotQuality={1}
                     videoConstraints={{
                         facingMode: isMobile ? facingMode : "user"
                     }}
@@ -75,7 +83,7 @@ const CustomWebcam = () => {
                             <Trash />
                             <span className="sr-only">Icon description</span>
                         </button>
-                        <button onClick={retake} type="button" className="bg-green-600 border-2 focus:outline-none font-extrabold rounded-full text-sm p-2.5 text-center inline-flex items-center border-white text-white">
+                        <button onClick={launchImage} type="button" className="bg-green-600 border-2 focus:outline-none font-extrabold rounded-full text-sm p-2.5 text-center inline-flex items-center border-white text-white">
                             <Launch />
                             <span className="sr-only">Icon description</span>
                         </button>
