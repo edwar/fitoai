@@ -12,8 +12,8 @@ interface FacingMode {
 }
 
 const CustomWebcam = () => {
-    const webcamRef = useRef(null);
-    const [imgSrc, setImgSrc] = useState(null);
+    const webcamRef = useRef<Webcam & HTMLVideoElement>(null);
+    const [imgSrc, setImgSrc] = useState("");
     const [mirrored, setMirrored] = useState(false);
     const [flipState, setFlipState] = useState(false)
     const [facingMode, setFacingMode] = useState<FacingMode>({
@@ -21,12 +21,14 @@ const CustomWebcam = () => {
     });
 
     const retake = () => {
-        setImgSrc(null);
+        setImgSrc("");
     };
 
     const capture = useCallback(() => {
         const imageSrc = webcamRef.current?.getScreenshot();
-        setImgSrc(imageSrc);
+        if(imageSrc) {
+            setImgSrc(imageSrc);
+        }
     }, [webcamRef]);
 
     const flip = () => {
