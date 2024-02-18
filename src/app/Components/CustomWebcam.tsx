@@ -1,0 +1,92 @@
+"use client"
+import React, { useCallback, useRef, useState } from 'react'
+import Webcam from "react-webcam";
+import Camera from "@/app/Icons/Camera"
+import Trash from '@/app/Icons/Trash';
+import Launch from '@/app/Icons/Launch';
+import Flip from '@/app/Icons/Flip';
+import { isMobile } from 'react-device-detect';
+
+interface FacingMode {
+    exact: 'user' | 'environment'
+}
+
+const CustomWebcam = () => {
+    const webcamRef = useRef(null);
+    const [imgSrc, setImgSrc] = useState(null);
+    const [mirrored, setMirrored] = useState(false);
+    const [flipState, setFlipState] = useState(false)
+    const [facingMode, setFacingMode] = useState<FacingMode>({
+        exact: "user"
+    });
+
+    const retake = () => {
+        setImgSrc(null);
+    };
+
+    const capture = useCallback(() => {
+        const imageSrc = webcamRef.current?.getScreenshot();
+        setImgSrc(imageSrc);
+    }, [webcamRef]);
+
+    const flip = () => {
+        setFacingMode({
+            exact: !flipState ? 'environment' : 'user'
+        })
+        setFlipState(!flipState)
+    }
+
+    return (
+        <div className='w-full h-screen'>
+            {imgSrc ? (
+                <img src={imgSrc} alt="webcam" className="absolute object-cover w-full h-full" />
+            ) : (
+                <Webcam
+                    className=" absolute object-cover w-full h-full"
+                    audio={false}
+                    screenshotFormat="image/jpeg"
+                    ref={webcamRef}
+                    mirrored={mirrored}
+                    screenshotQuality={0.8}
+                    videoConstraints={{
+                        facingMode: isMobile ? facingMode : "user"
+                    }}
+                />
+            )}
+            <div className="absolute bottom-5 right-5">
+                <label className="flex flex-col items-end justify-end cursor-pointer gap-2">
+                    <input type="checkbox" checked={mirrored} onChange={(e) => setMirrored(e.target.checked)} className="sr-only peer" />
+                    <div className="relative w-11 h-6 peer-focus:outline-none rounded-full bg-gray-400 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-slate-800"></div>
+                    <span className="ms-3 text-sm font-medium text-white">Modo espejo</span>
+                </label>
+            </div>
+            <div className='absolute bottom-5 left-5'>
+                <button onClick={flip} type="button" className="bg-slate-800 border-2 font-extrabold rounded-full text-sm p-2.5 text-center inline-flex items-center border-white text-white">
+                    <Flip />
+                    <span className="sr-only">Icon description</span>
+                </button>
+            </div>
+            <div className="flex gap-5 absolute bottom-10 left-1/2 transform -translate-x-1/2">
+                {imgSrc ? (
+                    <>
+                        <button onClick={retake} type="button" className="bg-red-600 border-2 focus:outline-none font-extrabold rounded-full text-sm p-2.5 text-center inline-flex items-center border-white text-white">
+                            <Trash />
+                            <span className="sr-only">Icon description</span>
+                        </button>
+                        <button onClick={retake} type="button" className="bg-green-600 border-2 focus:outline-none font-extrabold rounded-full text-sm p-2.5 text-center inline-flex items-center border-white text-white">
+                            <Launch />
+                            <span className="sr-only">Icon description</span>
+                        </button>
+                    </>
+                ) : (
+                    <button onClick={capture} type="button" className="bg-white border-2 focus:outline-none font-extrabold rounded-full text-sm p-2.5 text-center inline-flex items-center border-slate-400 text-blue-400">
+                        <Camera />
+                        <span className="sr-only">Icon description</span>
+                    </button>
+                )}
+            </div>
+        </div>
+    )
+}
+
+export default CustomWebcam
