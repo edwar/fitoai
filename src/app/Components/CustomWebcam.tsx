@@ -54,7 +54,7 @@ const CustomWebcam = ({ callback, close }: Props) => {
                 <img src={imgSrc} alt="webcam" className="absolute object-cover w-full h-full" />
             ) : (
                 <Webcam
-                    className=" absolute object-cover w-full h-full"
+                    className="absolute object-cover w-full h-full"
                     audio={false}
                     screenshotFormat="image/jpeg"
                     ref={webcamRef}
