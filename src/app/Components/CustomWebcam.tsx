@@ -65,15 +65,15 @@ const CustomWebcam = ({ callback, close }: Props) => {
                     }}
                 />
             )}
-            <div className='absolute top-5 right-5 cursor-pointer' onClick={close}><Close /></div>
-            <div className="absolute bottom-5 right-5">
-                <label className="flex flex-col items-end justify-end cursor-pointer gap-2">
+            <div className='absolute top-5 right-5 cursor-pointer text-white' onClick={close}><Close /></div>
+            <div className="absolute bottom-5 left-5">
+                <label className="flex flex-col cursor-pointer gap-2">
+                    <span className="text-sm font-medium text-white">Modo espejo</span>
                     <input type="checkbox" checked={mirrored} onChange={(e) => setMirrored(e.target.checked)} className="sr-only peer" />
                     <div className="relative w-11 h-6 peer-focus:outline-none rounded-full bg-gray-400 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-slate-800"></div>
-                    <span className="ms-3 text-sm font-medium text-white">Modo espejo</span>
                 </label>
             </div>
-            <div className='absolute bottom-5 left-5'>
+            <div className='absolute bottom-5 right-5'>
                 <button onClick={flip} type="button" className="bg-slate-800 border-2 font-extrabold rounded-full text-sm p-2.5 text-center inline-flex items-center border-white text-white">
                     <Flip />
                     <span className="sr-only">Icon description</span>
