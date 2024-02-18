@@ -1,6 +1,6 @@
 "use client"
 import { useState } from "react";
-import CustomWebcam from "./components/CustomWebcam";
+import CustomWebcam from "./Components/CustomWebcam";
 
 export default function Home() {
   const [showCamera, setShowCamera] = useState(true)
@@ -11,8 +11,7 @@ export default function Home() {
       const response = await fetch("/api/", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
-          // 'Content-Type': 'application/x-www-form-urlencoded',
+          "Content-Type": "application/json"
         },
         body: JSON.stringify({ base64 })
       })
