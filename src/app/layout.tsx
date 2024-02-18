@@ -17,7 +17,6 @@ export default function RootLayout({
   return (
     <html lang="es-CO">
       <body className={inter.className}>
-        <div className="absolute inset-0 -z-10 h-full w-full bg-white [background:radial-gradient(100%_100%_at_55%_10%,#fff_40%,#316d3d_100%)]"></div>
         {children}
       </body>
     </html>
