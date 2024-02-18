@@ -6,7 +6,7 @@ import Flip from '../Icons/Flip';
 import Trash from '../Icons/Trash';
 import Launch from '../Icons/Launch';
 import Camera from '../Icons/Camera';
-import Close from './Close';
+import Close from '../Icons/Close';
 
 interface FacingMode {
     exact: 'user' | 'environment'
