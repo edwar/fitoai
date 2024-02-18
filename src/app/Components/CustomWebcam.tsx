@@ -6,6 +6,7 @@ import Flip from '../Icons/Flip';
 import Trash from '../Icons/Trash';
 import Launch from '../Icons/Launch';
 import Camera from '../Icons/Camera';
+import Close from './Close';
 
 interface FacingMode {
     exact: 'user' | 'environment'
@@ -13,9 +14,10 @@ interface FacingMode {
 
 interface Props {
     callback: (base64: string) => void
+    close: () => void
 }
 
-const CustomWebcam = ({ callback }: Props) => {
+const CustomWebcam = ({ callback, close }: Props) => {
     const webcamRef = useRef<Webcam & HTMLVideoElement>(null);
     const [imgSrc, setImgSrc] = useState("");
     const [mirrored, setMirrored] = useState(false);
@@ -63,6 +65,7 @@ const CustomWebcam = ({ callback }: Props) => {
                     }}
                 />
             )}
+            <div className='absolute top-5 right-5 cursor-pointer' onClick={close}><Close /></div>
             <div className="absolute bottom-5 right-5">
                 <label className="flex flex-col items-end justify-end cursor-pointer gap-2">
                     <input type="checkbox" checked={mirrored} onChange={(e) => setMirrored(e.target.checked)} className="sr-only peer" />
