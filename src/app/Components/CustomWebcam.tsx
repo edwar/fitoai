@@ -1,11 +1,11 @@
 "use client"
 import React, { useCallback, useRef, useState } from 'react'
-import Webcam from "react-webcam";
-import Camera from "@/app/icons/Camera"
-import Trash from '@/app/icons/Trash';
-import Launch from '@/app/icons/Launch';
-import Flip from '@/app/icons/Flip';
 import { isMobile } from 'react-device-detect';
+import Webcam from 'react-webcam';
+import Flip from '../icons/Flip';
+import Trash from '../icons/Trash';
+import Launch from '../icons/Launch';
+import Camera from '../icons/Camera';
 
 interface FacingMode {
     exact: 'user' | 'environment'
