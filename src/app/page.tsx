@@ -1,5 +1,5 @@
 "use client"
-import CustomWebcam from "@/app/components/customWebcam";
+import CustomWebcam from "@/app/components/CustomWebcam";
 import { useState } from "react";
 
 export default function Home() {
