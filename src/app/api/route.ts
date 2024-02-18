@@ -1,14 +1,12 @@
 import OpenAI from 'openai';
 import { OpenAIStream, StreamingTextResponse } from 'ai'
 import { prompt } from '../service/openai/prompt';
- 
-type ResponseData = {
-    message: string
-}
 
-export const openai = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY, // This is the default and can be omitted
+const openai = new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY,
 });
+
+export const runtime = 'edge'
  
 export async function POST(request: Request) {
     const { base64 } = await request.json()
