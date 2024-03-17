@@ -1,11 +1,12 @@
 "use client"
 import { useState } from "react";
-import CustomWebcam from "./Components/CustomWebcam";
-import Loading from "./Components/Loading";
-import Hero from "./Components/Hero";
-import Team from "./Components/Team";
-import Message from "./Components/Message";
-import Footer from "./Components/Footer";
+import CustomWebcam from "@/app/Components/CustomWebcam";
+import Loading from "@/app/Components/Loading";
+import Hero from "@/app/Components/Hero";
+import Team from "@/app/Components/Team";
+import Message from "@/app/Components/Message";
+import Footer from "@/app/Components/Footer";
+import Navbar from "@/app/Components/Navbar";
 
 export default function Home() {
   const [showCamera, setShowCamera] = useState(false)
@@ -35,21 +36,18 @@ export default function Home() {
     }
   }
 
-  return (
+  
+  return (<>
+    {showCamera && <CustomWebcam callback={handlerIA} close={() => setShowCamera(false)} />}
+    {isLoading && <Loading />}
+    <header>
+      <Navbar />
+      <Hero goToCamera={() => setShowCamera(true)} />
+    </header>
     <main className={`${message && "overflow-hidden"} flex max-h-screen flex-col`}>
-      {showCamera ?
-        <CustomWebcam callback={handlerIA} close={() => setShowCamera(false)} />
-      :
-        isLoading ? 
-          <Loading />
-        :
-          <>
-            <Hero goToCamera={() => setShowCamera(true)} />
-            <Team />
-            <Footer />
-          </>
-      }
+      <Team />
+      <Footer />
       <Message message={message} close={() => setMessage("")} />
     </main>
-  );
+  </>);
 }
