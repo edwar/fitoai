@@ -31,3 +31,9 @@ body {
     text-wrap: balance;
   }
 }
+
+@layer components{
+  .wrapper{
+    @apply w-full mx-auto max-w-screen-xl overflow-hidden
+  }
+}
