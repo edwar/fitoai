@@ -9,8 +9,8 @@ interface Props {
 
 export default function Card({ image, description, title, url }: Props) {
   return (
-    <div className='max-w-lg mx-auto'>
-        <div className='bg-slate-700 shadow-md border border-slate-500 rounded-lg max-w-sm mb-5'>
+    <div className='w-full'>
+        <div className='bg-slate-700 shadow-md border border-slate-500 rounded-lg'>
             <img className='rounded-t-lg' src={image} alt={`Imagen de ${title}`} />
             <div className='p-5'>
                 <h5 className='text-white font-bold text-2xl tracking-tight mb-2 truncate'>{title}</h5>

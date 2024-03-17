@@ -1,8 +1,18 @@
-import React from 'react'
+"use client"
+import React, { useEffect } from 'react'
 import Link from 'next/link'
 import Brand from '@/app/Components/Brand'
+import { usePathname } from 'next/navigation'
+
 
 export default function Navbar() {
+  const pathname = usePathname()
+  
+  useEffect(() => {
+    const check = document.getElementById("menu") as HTMLInputElement
+    if(!check) return
+    check.checked = false
+  }, [pathname])
   return (
     <nav className='fixed w-full flex justify-between items-center px-10 py-3 h-20 bg-slate-900 z-40'>
       <a href='/' className='w-1/3 max-w-[140px]'>
