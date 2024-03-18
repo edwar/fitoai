@@ -35,15 +35,19 @@ export default function Home() {
   }
 
   
-  return (<>
-    {showCamera && <CustomWebcam callback={handlerIA} close={() => setShowCamera(false)} />}
-    {isLoading && <Loading />}
-    <header>
-      <Hero goToCamera={() => setShowCamera(true)} />
-    </header>
-    <main className={`${message && 'overflow-hidden'} flex flex-col`}>
-      <Team />
-      <Message message={message} close={() => setMessage('')} />
-    </main>
-  </>);
+  return (
+    showCamera ? <CustomWebcam callback={handlerIA} close={() => setShowCamera(false)} />:
+    <>
+      {isLoading && <Loading />}
+      {!isLoading && <>
+        <header>
+          <Hero goToCamera={() => setShowCamera(true)} />
+        </header>
+        <main className={`${message && 'overflow-hidden'} flex flex-col`}>
+          <Team />
+          <Message message={message} close={() => setMessage('')} />
+        </main>
+      </>}
+    </>
+  );
 }
