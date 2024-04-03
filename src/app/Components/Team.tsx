@@ -17,8 +17,8 @@ const Team = () => {
                         <h3 className='text-xl font-bold tracking-tight text-white line-clamp-1'>
                            <div>Angela Rocio Amaya Diaz</div>
                         </h3>
-                        <span className='text-gray-400 line-clamp-2'>Estudienate</span>
-                        <p className='mt-3 mb-4 font-light text-gray-400 line-clamp-3'>Soy una estudaiante de TICs, me gusta el arte y el diseño, quiero aportar a la sociedad con un producto que veneficie a los campesinos del país.</p>
+                        <span className='text-gray-400 line-clamp-2'>Estudiante</span>
+                        <p className='mt-3 mb-4 font-light text-gray-400 line-clamp-3'>Diseño de pagina y editora de contenidos</p>
                     </div>
                 </div> 
                 <div className='items-center rounded-lg shadow sm:flex bg-gray-800 border-gray-700 hover:scale-110 duration-700'>
@@ -29,8 +29,8 @@ const Team = () => {
                         <h3 className='text-xl font-bold tracking-tight text-white line-clamp-1'>
                            <div>Santiago Morales Morales</div>
                         </h3>
-                        <span className='text-gray-400 line-clamp-2'>Estudienate</span>
-                        <p className='mt-3 mb-4 font-light text-gray-400 line-clamp-3'>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el.</p>
+                        <span className='text-gray-400 line-clamp-2'>Estudiante</span>
+                        <p className='mt-3 mb-4 font-light text-gray-400 line-clamp-3'>programador</p>
                     </div>
                 </div> 
                 <div className='items-center rounded-lg shadow sm:flex bg-gray-800 border-gray-700 hover:scale-110 duration-700'>
@@ -41,8 +41,8 @@ const Team = () => {
                         <h3 className='text-xl font-bold tracking-tight text-white line-clamp-1'>
                            <div>Nicolas Morales Morales</div>
                         </h3>
-                        <span className='text-gray-400 line-clamp-2'>Estudienate</span>
-                        <p className='mt-3 mb-4 font-light text-gray-400 line-clamp-3'>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el.</p>
+                        <span className='text-gray-400 line-clamp-2'>Estudiante</span>
+                        <p className='mt-3 mb-4 font-light text-gray-400 line-clamp-3'>Programador</p>
                     </div>
                 </div> 
                 <div className='items-center rounded-lg shadow sm:flex bg-gray-800 border-gray-700 hover:scale-110 duration-700'>
@@ -53,8 +53,8 @@ const Team = () => {
                         <h3 className='text-xl font-bold tracking-tight text-white line-clamp-1'>
                            <div>Emmanuel Andres Soto Peña</div>
                         </h3>
-                        <span className='text-gray-400 line-clamp-2'>Estudienate</span>
-                        <p className='mt-3 mb-4 font-light text-gray-400 line-clamp-3'>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el.</p>
+                        <span className='text-gray-400 line-clamp-2'>Estudiante</span>
+                        <p className='mt-3 mb-4 font-light text-gray-400 line-clamp-3'>Diseñador de pagina web</p>
                     </div>
                 </div>  
             </div>  
