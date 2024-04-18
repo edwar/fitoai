@@ -26,7 +26,7 @@ export default function GallerySwipe({ images, galleryID }: Readonly<{images: Im
   }, []);
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-20" id={galleryID}>
+    <div className="grid place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-20" id={galleryID}>
       {images.map((image, index: number) => (
         <div key={galleryID + '-' + index} className='grid gap-4'>
           <a
