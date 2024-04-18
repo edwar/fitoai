@@ -9,20 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/photoswipe": "^4.1.6",
     "ai": "^2.2.35",
+    "cloudinary": "^2.1.0",
     "next": "14.1.0",
     "openai": "^4.28.0",
+    "photoswipe": "^5.4.3",
     "react": "^18",
     "react-device-detect": "^2.2.3",
     "react-dom": "^18",
-    "react-responsive-masonry": "^2.2.0",
     "react-webcam": "^7.2.0"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "@types/react-responsive-masonry": "^2.1.3",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
