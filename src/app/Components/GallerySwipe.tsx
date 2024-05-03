@@ -1,7 +1,7 @@
 'use client'
-import React, { useEffect } from 'react';
-import PhotoSwipeLightbox from 'photoswipe/lightbox';
-import 'photoswipe/style.css';
+import { useState } from 'react';
+import Lightbox from 'react-image-lightbox';
+import 'react-image-lightbox/style.css';
 
 type Source = {
   largeURL: string
@@ -13,37 +13,70 @@ type Source = {
 }
 
 export default function GallerySwipe({ sources, galleryID }: Readonly<{sources: Source[], galleryID: string}>) {
-  useEffect(() => {
-    let lightbox = new PhotoSwipeLightbox({
-      gallery: '#' + galleryID,
-      children: 'a',
-      pswpModule: () => import('photoswipe'),
-    });
-    lightbox.init();
+  const [isOpen, setIsOpen] = useState(false);
+  const [currentItem, setCurrentItem] = useState(0);
 
-    return () => {
-      lightbox.destroy();
-    };
-  }, []);
+  const openLightbox = (index: number) => {
+    document.body.style.overflow = 'hidden';
+    setCurrentItem(index);
+    setIsOpen(true);
+  };
+
+  const moveNext = () => {
+    setCurrentItem((prevIndex) => (prevIndex + 1) % sources.length);
+  };
+
+  const movePrev = () => {
+    setCurrentItem((prevIndex) => (prevIndex + sources.length - 1) % sources.length);
+  };
+
+  const close = () => {
+    document.body.style.overflow = 'visible';
+    setIsOpen(false)
+  }
 
   return (
-    <div className="grid place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-20" id={galleryID}>
-      {sources.map((source, index: number) => (
-        <div key={galleryID + '-' + index} className='grid gap-4'>
-          <a
-            href={source.largeURL}
-            data-pswp-width={source.width}
-            data-pswp-height={source.height}
-            target="_blank"
-            rel="noreferrer"
-          >
-            {source.resource_type === "image"
-              ? <img src={source.thumbnailURL} alt={source.alt} />
-              : <video src={source.thumbnailURL} />
-            }
-          </a>
+    <div className="grid grid-cols-3 gap-4">
+      {sources.map((source, index) => (
+        <div key={`${galleryID} - ${index}`} className="w-full cursor-pointer" onClick={() => { openLightbox(index) }}>
+          {source.resource_type === 'image' ? (
+            <img src={source.thumbnailURL} alt={source.alt} className="w-full h-auto pointer-events-none" />
+          ) : (
+            <video controls className="w-full h-full aspect-video pointer-events-none">
+              <source src={source.thumbnailURL} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          )}
         </div>
       ))}
+      {isOpen && (
+        <div>
+          {sources[currentItem].resource_type === 'image' ? (
+            <Lightbox
+              mainSrc={sources[currentItem].largeURL}
+              nextSrc={sources[(currentItem + 1) % sources.length].largeURL}
+              prevSrc={sources[(currentItem + sources.length - 1) % sources.length].largeURL}
+              onCloseRequest={() => close()}
+              onMovePrevRequest={movePrev}
+              onMoveNextRequest={moveNext}
+            />
+          ) : (
+            <div className="absolute z-40 top-0 left-0 bottom-0 bg-black/90">
+              <video controls autoPlay className="w-screen h-screen aspect-square">
+                <source src={sources[currentItem].largeURL} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <button className='absolute top-3 right-6' onClick={() => close()}>
+                <svg xmlns="http://www.w3.org/2000/svg" className="text-gray-400 w-8 h-8 hover:text-white" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M18 6l-12 12" />
+                  <path d="M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }

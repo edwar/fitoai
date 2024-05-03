@@ -14,7 +14,6 @@ export default async function Page() {
       .sort_by("public_id", "desc")
       .max_results(400)
       .execute();
-      console.log(resources)
       const sources = resources.map((resource: any) => {
         const { width, height } = resource;
         return {
