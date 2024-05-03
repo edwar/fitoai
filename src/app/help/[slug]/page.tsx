@@ -1,4 +1,6 @@
+"use client"
 import React from 'react'
+import DOMPurify from 'dompurify'
 import { helps } from '@/app/data/help'
 
 type Props = {
@@ -19,7 +21,7 @@ export default function Page({ params: { slug } } : Readonly<Props>) {
             <>
                 <h1 className='text-4xl font-semibold'>{help.title}</h1>
                 <img className='w-1/3 float-left' src={help.image} alt={`Imagen de ${help.title}`} />
-                <p className='text-balance font-light' dangerouslySetInnerHTML={{ __html: help.description }} />
+                <p className='text-balance font-light' dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(help.description) }} />
             </>
         } 
     </div>

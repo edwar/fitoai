@@ -37,3 +37,7 @@ body {
     @apply w-full mx-auto max-w-screen-xl overflow-hidden
   }
 }
+
+strong {
+  color: white;
+}

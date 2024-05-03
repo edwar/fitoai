@@ -14,19 +14,21 @@ export default async function Page() {
       .sort_by("public_id", "desc")
       .max_results(400)
       .execute();
-      const images = resources.map((resource: any) => {
+      console.log(resources)
+      const sources = resources.map((resource: any) => {
         const { width, height } = resource;
         return {
           largeURL: resource.secure_url.replace("/upload/", "/upload/c_fill,w_2500/"),
           thumbnailURL: resource.secure_url.replace("/upload/", "/upload/c_fill,w_300/"),
           width,
           height,
-          alt: resource.filename
+          alt: resource.filename,
+          resource_type: resource.resource_type
         }
       });
   return (
     <section className='min-h-screen pt-28 wrapper p-4 md:p-8 lg:p-10'>
-        <GallerySwipe images={images} galleryID='gallery' />
+        <GallerySwipe sources={sources} galleryID='gallery' />
     </section>
   )
 }
