@@ -18,9 +18,9 @@ export default function Page({ params: { slug } } : Readonly<Props>) {
                 <img className='aspect-auto w-1/2' src="/helps/todo-bien.webp" alt="Todo esta bien" />
             </>:
             <>
-                <h1 className='text-4xl font-semibold'>{help.title}</h1>
+                <h1 className='text-white text-4xl font-semibold'>{help.title}</h1>
                 <img className='w-1/3 float-left' src={help.image} alt={`Imagen de ${help.title}`} />
-                <p className='text-balance font-light' dangerouslySetInnerHTML={{ __html: help.description }} />
+                <p className='text-white text-balance font-light' dangerouslySetInnerHTML={{ __html: help.description }} />
             </>
         } 
     </div>
