@@ -15,7 +15,7 @@ export const sendEmail = async (formData: FormData) => {
   const mailOptions: MailOptions = {
     from: {
       name: `${formData.get("names")} ${formData.get("lastNames")}`,
-      address: "myEmail@gmail.com",
+      address: `${formData.get("email")}`,
     },
     subject: `${formData.get("subject")} - Mensaje de ${formData.get(
       "names"
