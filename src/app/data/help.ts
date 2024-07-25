@@ -26,7 +26,7 @@ export const helps = [
         
         <br/><strong class="text-2xl">5. Mosca blanca: un clon incesante</strong><br/><br/>
         
-        La mosca blanca, con su aspecto similar a una polilla, se reproduce a un ritmo alarmante. Se alimenta de la savia de las plantas y deposita una sustancia pegajosa que favorece el crecimiento de hongos. Un enemigo formidable que puede causar daños considerables a los cultivos.<br/><br/>`
+        La mosca blanca, con su aspecto similar a una polilla, se reproduce a un ritmo alarmante. Se alimenta de la savia de las plantas y deposita una sustancia pegajosa que favorece el crecimiento de hongos. Un enemigo formidable que puede causar daños considerables a los cultivos..<br/><br/>`
     },
     {
         id: "injertos-mas-comunes",
