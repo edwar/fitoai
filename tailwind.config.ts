@@ -15,6 +15,15 @@ const config: Config = {
         "close-menu": "url('/icons/close.svg')",
         "open-menu": "url('/icons/bars.svg')"
       },
+      animation: {
+        'loop-scroll': 'loop-scroll 25s linear infinite',
+      },
+      keyframes: {
+        'loop-scroll': {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-113.5%)' },
+        }
+      }  
     },
   },
   plugins: [],

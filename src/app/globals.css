@@ -41,24 +41,3 @@ body {
 strong {
   color: white;
 }
-/* Esto es nuevo xd si falla esta aca es la animacion del slide del team */
-@keyframes slideRight {
-  0% {
-    transform: translateX(-70%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-}
-
-.animate-slideRight {
-  display: inline-block; /* Asegura que el elemento se comporte como un bloque en línea para la animación */
-  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
-  animation: slideRight 30s linear infinite; /* Ajusta el tiempo según sea necesario */
-}
-
-
-
-
-
-

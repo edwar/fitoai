@@ -23,6 +23,9 @@ importers:
       '@types/photoswipe':
         specifier: ^4.1.6
         version: 4.1.6
+      '@types/react-fontawesome':
+        specifier: ^1.6.8
+        version: 1.6.8
       ai:
         specifier: ^2.2.35
         version: 2.2.35(react@18.3.1)(solid-js@1.8.17)(svelte@4.2.18)(vue@3.4.27(typescript@5.3.3))
@@ -324,6 +327,9 @@ packages:
 
   '@types/react-dom@18.2.19':
     resolution: {integrity: sha512-aZvQL6uUbIJpjZk4U8JZGbau9KDeAwMfmhyWorxgBkqDIEf6ROjRozcmPIicqsUwPUjbkDfHKgGee1Lq65APcA==}
+
+  '@types/react-fontawesome@1.6.8':
+    resolution: {integrity: sha512-+dQ+4jccHraCd/FI4uSeY/O7c1RZ+wVASTgpCgbC6ijh1zSDsr0cb9XU3Dbfy5eJPyXq5QPp9W9RJTVRf+5+pA==}
 
   '@types/react@18.2.56':
     resolution: {integrity: sha512-NpwHDMkS/EFZF2dONFQHgkPRwhvgq/OAvIaGQzxGSBmaeR++kTg6njr15Vatz0/2VcCEwJQFi6Jf4Q0qBu0rLA==}
@@ -2193,6 +2199,10 @@ snapshots:
   '@types/prop-types@15.7.11': {}
 
   '@types/react-dom@18.2.19':
+    dependencies:
+      '@types/react': 18.2.56
+
+  '@types/react-fontawesome@1.6.8':
     dependencies:
       '@types/react': 18.2.56
 
