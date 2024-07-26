@@ -9,7 +9,7 @@ const Team = () => {
             <div className='mx-auto max-w-screen-sm text-center mb-8 lg:mb-16'>
                 <h2 className='mb-4 text-4xl tracking-tight font-extrabold text-white'>Equipo</h2>
             </div>
-            <div className="flex overflow-hidden space-x-72 group">
+            <div className="flex overflow-hidden space-x-72 group mb-5 md:mb-0">
               <div className="flex space-x-72 animate-loop-scroll">
                 <p className='font-light lg:mb-16 sm:text-xl text-gray-400 text-nowrap max-w-none'>Somos un equipo de estudiantes de la institucion educativa departamental Hernan Venegas Carrillo</p>
                 <p className='font-light lg:mb-16 sm:text-xl text-gray-400 text-nowrap max-w-none'>Somos un equipo de estudiantes de la institucion educativa departamental Hernan Venegas Carrillo</p>
