@@ -35,6 +35,20 @@ export default function Home() {
     }
   }
 
+  const handleEmail = async(data: FormData) => {
+    try {
+      const resp = await sendEmail(data)
+      const { ok } = resp
+      if(!ok) {
+        //Ejecutar un snapbatr que diga que el envio del email fallo
+        return
+      }
+      //Ejecutar un snapbar que diga que el envio de email fue exitoso
+    } catch (error) {
+      //Ejecutar un snapbar que diga que el envio del email fallo
+    }
+  }
+
   
   return (
     showCamera ? <CustomWebcam callback={handlerIA} close={() => setShowCamera(false)} />:
@@ -48,7 +62,7 @@ export default function Home() {
           <Team />
           <div className='wrapper py-8 px-4 lg:py-16 lg:px-6'>
             <h2 className='text-2xl font-bold text-center mb-10 text-slate-50 animate-bounce'>Contactanos</h2>
-            <form className='flex flex-col gap-4 w-full items-center' action={sendEmail}>
+            <form className='flex flex-col gap-4 w-full items-center' action={handleEmail}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
                 <input name='names' className='h-10 rounded px-2 text-black' type="text" placeholder='Nombres' />
                 <input name='lastNames' className='h-10 rounded px-2 text-black' type="text" placeholder='Apellidos' />

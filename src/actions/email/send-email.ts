@@ -46,16 +46,22 @@ export const sendEmail = async (formData: FormData) => {
     });
   });
   await new Promise((resolve, reject) => {
-    // send mail
-    transporter.sendMail(mailOptions, (err, info) => {
-      if (err) {
-        console.error(err);
-        reject(err);
-      } else {
-        console.log(info);
-        resolve(info);
+    try {
+      // send mail
+      transporter.sendMail(mailOptions, (err, info) => {
+        if (err) {
+          console.error(err);
+          reject(err);
+        } else {
+          console.log(info);
+          resolve(info);
+        }
+      });
+    } catch (error) {
+      return {
+        ok: false,
       }
-    });
+    }
   });
   return {
     ok: true,

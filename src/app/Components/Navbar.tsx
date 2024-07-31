@@ -26,6 +26,9 @@ export default function Navbar() {
             <Link href='/gallery' className='text-slate-800 md:text-white px-3 py-2 rounded-md md:hover:bg-slate-500'>Galeria</Link>
           </li>
           <li>
+            <Link href='/shop' className='text-slate-800 md:text-white px-3 py-2 rounded-md md:hover:bg-slate-500'>Tiendas agrícolas</Link>
+          </li>
+          <li>
             <Link href='/help' className='text-slate-800 md:text-white px-3 py-2 rounded-md md:hover:bg-slate-500'>Ayudas</Link>
           </li>
         </ul>
