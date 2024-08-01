@@ -3,14 +3,14 @@ import React from 'react'
 export default function Ppageage() {
     return (
         <section className='min-h-screen pt-28 wrapper p-4 md:p-8 md:pt-24 lg:p-10 lg:pt-24'>
-            <h1 className='text-xl text-white mb-4'>
-                Tiendas agrícolas
+            <h1 className=' text-white mb-4 font-semibold text-5xl'>
+                <p className=' text-center bg-slate-800 w-full'>Tiendas agrícolas</p>
             </h1>
             <div className="flex flex-wrap gap-4">
                 {/* Tarjeta 1 */}
-                <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-90 hover:opacity-30 duration-300">
+                <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-90 hover:opacity-50 duration-300">
                     <a href="#">
-                        <img className="rounded-t-lg" src="/team/nicolas.webp" alt="Nicolas" />
+                        <img className="rounded-t-lg" src="/shop/casa1.jpg" alt="Imagen Tienda" />
                     </a>
                     <div className="p-5">
                         <a href="#">
@@ -27,9 +27,9 @@ export default function Ppageage() {
                 </div>
 
                 {/* Tarjeta 2 */}
-                <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-90 hover:opacity-30 duration-300">
+                <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-90 hover:opacity-50 duration-300">
                     <a href="#">
-                        <img className="rounded-t-lg" src="/team/nicolas.webp" alt="Nicolas" />
+                        <img className="rounded-t-lg" src="/shop/casa2.jpg" alt="Nicolas" />
                     </a>
                     <div className="p-5">
                         <a href="#">
@@ -46,9 +46,9 @@ export default function Ppageage() {
                 </div>
 
                 {/* Tarjeta 3 */}
-                <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-90 hover:opacity-30 duration-300">
+                <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-90 hover:opacity-50 duration-300">
                     <a href="#">
-                        <img className="rounded-t-lg" src="/team/nicolas.webp" alt="Nicolas" />
+                        <img className="rounded-t-lg" src="/shop/casa4.jpg" alt="Nicolas" />
                     </a>
                     <div className="p-5">
                         <a href="#">
