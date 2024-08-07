@@ -1,9 +1,15 @@
 export const helps = [
     {
+
         id: "plagas-mas-comunes",
         image: "/helps/plaga.webp",
         title: "Plagas más comunes",
-        description:`<p class="lg:text-left mb-6 font-light lg:mb-8 lg:text-lg text-gray-400" ><strong class="text-2xl">Enemigos invisibles:</strong> Las plagas más comunes de los cultivos frutales<br/><br/>
+        description:`<p
+        
+        Dream weaver instalar para division de las enfermedades mas comunes de colombia.
+
+
+        class="lg:text-left mb-6 font-light lg:mb-8 lg:text-lg text-gray-400" ><strong class="text-2xl">Enemigos invisibles:</strong> Las plagas más comunes de los cultivos frutales<br/><br/>
         Los huertos frutales, esos oasis de vida que nos brindan deliciosas frutas, no están exentos de peligros. Entre las ramas y hojas acechan plagas, diminutos pero feroces enemigos que pueden diezmar cosechas y poner en riesgo la salud de los árboles.<br/>
         
         En este artículo, exploraremos algunos de los protagonistas más comunes de este drama natural: las plagas que azotan los frutales. Conocerlas es el primer paso para combatirlas y proteger nuestros preciados frutales.<br/>
