@@ -14,7 +14,7 @@ export default function Navbar() {
     check.checked = false
   }, [pathname])
   return (
-    <nav className='fixed w-full flex justify-between items-center px-10 py-3 h-20 bg-slate-900 z-40'>
+    <nav className='fixed w-full flex justify-between items-center px-10 py-3 h-20 bg-slate-800 z-40'>
       <a href='/' className='w-1/3 max-w-[140px]'>
         <Brand />
       </a>
