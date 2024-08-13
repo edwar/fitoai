@@ -8,7 +8,7 @@ import Message from '@/app/Components/Message';
 import { sendEmail } from '@/actions';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import './Components/estilos/style.css'; // Asegúrate de importar el archivo CSS donde defines la animación
+import './Components/estilos/style.css'; // Asegúrate de importar el archivo CSS
 
 export default function Home() {
   const [showCamera, setShowCamera] = useState(false);
@@ -68,7 +68,13 @@ export default function Home() {
 
   const splitText = (text: string) => {
     return text.split('').map((char, index) => (
-      <span key={index} className="wave-animation">{char === ' ' ? '\u00A0' : char}</span>
+      <span
+        key={index}
+        className="wave-animation"
+        style={{ animationDelay: `${index * 0.1}s` }}
+      >
+        {char}
+      </span>
     ));
   };
 
@@ -81,7 +87,9 @@ export default function Home() {
           <>
             <Loading />
             <p className='text-white text-3xl absolute inset-0 overflow-hidden flex items-center justify-center z-50 top-72'>
-              {splitText('Enviando tu mensaje, esto podría tardar unos momentos...')}
+              <span className="wave-container">
+                {splitText('Enviando tu mensaje, esto podría tardar unos momentos...')}
+              </span>
             </p>
           </>
         )}

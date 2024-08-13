@@ -20,23 +20,31 @@
 
 /* Animacion pantalla de carga*/
 
+/* Contenedor del texto que será animado */
 /* style.css */
+
+/* Contenedor del texto que será animado */
 .wave-container {
-    display: inline-flex;
-    font-size: 24px;
+  display: inline-flex;
+  overflow: hidden;
+}
+
+/* Estilo para cada letra */
+.wave-animation {
+  display: inline-block;
+  animation: wave 1s ease-in-out infinite;
+  animation-fill-mode: both;
+}
+
+/* Animación de ola */
+@keyframes wave {
+  0% {
+    transform: translateY(0);
   }
-  
-  .wave-animation {
-    display: inline-block;
-    animation: wave 1.5s infinite;
+  50% {
+    transform: translateY(-15px);
   }
-  
-  @keyframes wave {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-15px);
-    }
+  100% {
+    transform: translateY(0);
   }
-  
+}
