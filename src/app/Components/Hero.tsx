@@ -15,7 +15,7 @@ const Hero = ({ goToCamera }: Props) => {
                     <Brand />
                 </h1>
                 <p className='max-w-2xl text-center lg:text-left mb-6 font-light lg:mb-8 lg:text-lg lg:text-xl text-gray-400'>Soy una inteligencia artificial especializada en detectar las enfermedades de tus plantas.</p>
-                <button onClick={goToCamera} className='flex w-52 gap-3 border items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 focus:ring-primary-900'>
+                <button onClick={goToCamera} className='flex w-52 gap-3 border items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 focus:ring-primary-900 hover:border-green-500 hover:text-green-500'>
                     Examinar planta
                     <Camera />
                 </button>

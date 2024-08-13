@@ -1,10 +1,18 @@
 import React from 'react';
+import './estilos/style.css'; // Ruta correcta para el archivo CSS
 
 export default function Brand() {
   return (
-    <div className='flex gap-1'>
-      <span className='uppercase text-3xl font-semibold'>Fito</span>
-      <span className='uppercase text-3xl font-semibold'>ai</span>
+    <div className='flex flex-col items-center gap-2'>
+      <div className='flex gap-1 relative'>
+        <span className='text-gradient'>
+          Fito
+        </span>
+        <span className='text-gradient'>
+          ai
+        </span>
+        <div className='absolute bottom-0 left-0 w-full h-1'></div>
+      </div>
     </div>
   );
 }
