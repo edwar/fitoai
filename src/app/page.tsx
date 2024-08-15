@@ -83,16 +83,20 @@ export default function Home() {
       <CustomWebcam callback={handlerIA} close={() => setShowCamera(false)} />
     ) : (
       <>
-        {isLoading && (
-          <>
-            <Loading />
-            <p className='text-white text-3xl absolute inset-0 overflow-hidden flex items-center justify-center z-50 top-72'>
-              <span className="wave-container">
-                {splitText('Enviando tu mensaje, esto podría tardar unos momentos...')}
-              </span>
-            </p>
-          </>
-        )}
+       {isLoading && (
+  <>
+    <Loading />
+    <div className='text-white text-2xl sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl px-4 text-center absolute inset-0 flex flex-col items-center justify-center z-50 top-72'>
+      <span className="wave-container">
+        {splitText('Enviando tu mensaje')}
+      </span>
+      <span className="wave-container mt-4"> {/* Ajuste de margen superior */}
+        {splitText('Esto podría tardar unos momentos...')}
+      </span>
+    </div>
+  </>
+)}
+
 
         {!isLoading && (
           <>

@@ -2,15 +2,28 @@
 
 /* Definimos la animación del texto con colores de gradiente */
 @keyframes gradientText {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-  
+  0% { background-position: 0% 50%; }
+  25% { background-position: 25% 50%; }
+  50% { background-position: 50% 75%; }
+  75% { background-position: 75% 100%; }
+  100% { background-position: 100% 75%; }
+}
+.text-gradient {
+  font-size: 3rem;
+  font-weight: bold;
+  background: linear-gradient(270deg, #00FF6A, #00D4FF, #00FFB2, #00F5FF, #00CFFF, #00FF44, #00FF00, #17f517);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-size: 400% 400%;
+  animation: gradientText 15s ease-in-out infinite;
+  position: relative; /* Ensure the pseudo-element is positioned relative to this element */
+}
+
   .text-gradient {
     font-size: 3rem; /* Tamaño del texto */
     font-weight: bold; /* Peso de la fuente */
-    background: linear-gradient(270deg, #ff007a, #7d00ff, #00d2ff); /* Gradiente de colores */
+    background: linear-gradient(270deg, #84ffb7, #00D4FF, #00FFB2, #00F5FF, #6edf8a, #00FF44, #86e686, #8ffdeb);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent; /* Hacemos el color del texto transparente para que se vea el gradiente */
@@ -48,4 +61,5 @@
   100% {
     transform: translateY(0);
   }
+  
 }
