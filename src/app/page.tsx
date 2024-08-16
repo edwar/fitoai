@@ -185,7 +185,7 @@ export default function Home() {
                     </div>
                     <div className='flex justify-center mt-6'>
                       <button
-                        className={`w-3/6 h-12 rounded-lg flex items-center justify-center ${isLoading ? 'bg-gray-500 cursor-not-allowed' : 'bg-green-500 hover:bg-indigo-600 transition-transform duration-300 scale-100 hover:scale-105 align-middle'} transition-colors duration-300`}
+                        className={`w-3/6 h-12 rounded-lg flex items-center justify-center ${isLoading ? 'bg-gray-500 cursor-not-allowed' : 'bg-green-500 hover:bg-indigo-600  transition-transform duration-300 scale-100 hover:scale-105 align-middle'} transition-colors duration-300`}
                         type="submit"
                         disabled={isLoading}
                       >
