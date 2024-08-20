@@ -26,7 +26,7 @@ const Hero = ({ goToCamera }: Props) => {
                 <div className='w-full max-w-xs mx-0 mb-6'>
                     <iframe 
                         className='w-full rounded-lg shadow-lg size-80 w-96' 
-                        src="https://www.youtube.com/embed/D1mFkYaKOW8" 
+                        src="https://www.youtube.com/embed/zIn69z4Pwak?si=OWv7P3_e-jj-mV0P"
                         frameBorder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                         allowFullScreen 
