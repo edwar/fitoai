@@ -42,4 +42,22 @@ strong {
   color: white;
 }
 
+/* Define la animación de deslizamiento */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 
+/* Clase que se aplicará al formulario cuando esté en vista */
+.slide-in {
+  animation: slideIn 0.6s ease-out forwards;
+}
+
+/*fondo formulario*/
+/* StarsBackground.css */

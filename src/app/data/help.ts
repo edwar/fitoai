@@ -5,8 +5,6 @@ export const helps = [
         image: "/helps/plaga.webp",
         title: "Plagas más comunes",
         description:`<p
-        
-        Dream weaver instalar para division de las enfermedades mas comunes de colombia.
 
 
         class="lg:text-left mb-6 font-light lg:mb-8 lg:text-lg text-gray-400" ><strong class="text-2xl">Enemigos invisibles:</strong> Las plagas más comunes de los cultivos frutales<br/><br/>

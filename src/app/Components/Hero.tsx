@@ -1,9 +1,9 @@
-import React from 'react'
-import Camera from '@/app/Icons/Camera'
-import Brand from '@/app/Components/Brand'
+import React from 'react';
+import Camera from '@/app/Icons/Camera';
+import Brand from '@/app/Components/Brand';
 
 interface Props {
-    goToCamera: () => void
+    goToCamera: () => void;
 }
 
 const Hero = ({ goToCamera }: Props) => {
@@ -14,8 +14,24 @@ const Hero = ({ goToCamera }: Props) => {
                 <h1 className='hidden lg:flex items-center gap-3 max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none lg:text-5xl xl:text-6xl text-white'>
                     <Brand />
                 </h1>
-                <p className='max-w-2xl text-center lg:text-left mb-6 font-light lg:mb-8 lg:text-lg lg:text-xl text-gray-400'>Soy una inteligencia artificial especializada en detectar las enfermedades de tus plantas.</p>
-                <button onClick={goToCamera} className='flex w-52 gap-3 border items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 focus:ring-primary-900 hover:border-green-500 hover:text-green-500'>
+                <p className='max-w-2xl text-center lg:text-left mb-6 font-light lg:mb-8 lg:text-lg lg:text-xl text-gray-400'>
+                    Soy una inteligencia artificial especializada en detectar las enfermedades de tus plantas.
+                </p>
+                {/* Aquí agregamos el video */}
+                <div className='w-full max-w-xs mx-0 mb-6'>
+                    <video 
+                        className='w-full rounded-lg shadow-lg' 
+                        controls 
+                        poster='/helps/sabes.jpg'  // Opcional: imagen para mostrar antes de que se reproduzca el video
+                    >
+                        <source src='/video.mp4' type='video/mp4' />
+                        Tu navegador no soporta la etiqueta de video.
+                    </video>
+                </div>
+                <button 
+                    onClick={goToCamera} 
+                    className='flex w-52 gap-3 border items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 focus:ring-primary-900 hover:border-green-500 hover:text-green-500'
+                >
                     Examinar planta
                     <Camera />
                 </button>
@@ -33,7 +49,8 @@ const Hero = ({ goToCamera }: Props) => {
             </div>                
         </div>
     </section>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
+

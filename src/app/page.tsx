@@ -1,5 +1,5 @@
-'use client'
-import { useState } from 'react';
+"use client"
+import React, { useEffect, useState, useRef } from 'react';
 import CustomWebcam from '@/app/Components/CustomWebcam';
 import Loading from '@/app/Components/Loading';
 import Hero from '@/app/Components/Hero';
@@ -8,12 +8,14 @@ import Message from '@/app/Components/Message';
 import { sendEmail } from '@/actions';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import './Components/estilos/style.css'; // Asegúrate de importar el archivo CSS
+import './globals.css';
 
 export default function Home() {
   const [showCamera, setShowCamera] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState('');
+  const [isFormVisible, setIsFormVisible] = useState(false);
+  const formRef = useRef<HTMLDivElement>(null);
 
   const handlerIA = async (base64: string) => {
     setShowCamera(false);
@@ -66,6 +68,27 @@ export default function Home() {
     setIsLoading(false);
   };
 
+  // Hook para manejar la visibilidad del formulario
+  useEffect(() => {
+    const handleScroll = () => {
+      if (formRef.current) {
+        const rect = formRef.current.getBoundingClientRect();
+        if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+          setIsFormVisible(true);
+        } else {
+          setIsFormVisible(false);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Verificar la visibilidad inicial
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   const splitText = (text: string) => {
     return text.split('').map((char, index) => (
       <span
@@ -83,20 +106,19 @@ export default function Home() {
       <CustomWebcam callback={handlerIA} close={() => setShowCamera(false)} />
     ) : (
       <>
-       {isLoading && (
-  <>
-    <Loading />
-    <div className='text-white text-2xl sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl px-4 text-center absolute inset-0 flex flex-col items-center justify-center z-50 top-72'>
-      <span className="wave-container">
-        {splitText('Enviando tu mensaje')}
-      </span>
-      <span className="wave-container mt-4"> {/* Ajuste de margen superior */}
-        {splitText('Esto podría tardar unos momentos...')}
-      </span>
-    </div>
-  </>
-)}
-
+        {isLoading && (
+          <>
+            <Loading />
+            <div className='text-white text-2xl sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl px-4 text-center absolute inset-0 flex flex-col items-center justify-center z-50 top-72'>
+              <span className="wave-container">
+                {splitText('Enviando tu mensaje')}
+              </span>
+              <span className="wave-container mt-4"> {/* Ajuste de margen superior */}
+                {splitText('Esto podría tardar unos momentos...')}
+              </span>
+            </div>
+          </>
+        )}
 
         {!isLoading && (
           <>
@@ -109,7 +131,10 @@ export default function Home() {
                 <h2 className='text-2xl font-bold text-center mb-10 text-slate-50 animate-bounce'>
                   Contáctanos
                 </h2>
-                <div className='bg-slate-800 rounded-lg p-8 space-y-8 mx-auto max-w-3xl'>
+                <div 
+                  ref={formRef}
+                  className={`bg-slate-800 rounded-lg p-8 space-y-8 mx-auto max-w-xl ${isFormVisible ? 'slide-in' : ''}`}  // Modificado: max-w-lg a max-w-xl
+                >
                   <form onSubmit={handleSubmit}>
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
                       <div className='relative'>
