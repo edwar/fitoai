@@ -17,16 +17,21 @@ const Hero = ({ goToCamera }: Props) => {
                 <p className='max-w-2xl text-center lg:text-left mb-6 font-light lg:mb-8 lg:text-lg lg:text-xl text-gray-400'>
                     Soy una inteligencia artificial especializada en detectar las enfermedades de tus plantas.
                 </p>
+                <h1 className=" text-2xl font-bold text-gray-400">¿No sabes usar la pagina?</h1>
+                <br>
+                </br>
+                
+                
                 {/* Aquí agregamos el video */}
                 <div className='w-full max-w-xs mx-0 mb-6'>
-                    <video 
-                        className='w-full rounded-lg shadow-lg' 
-                        controls 
-                        poster='/helps/sabes.jpg'  // Opcional: imagen para mostrar antes de que se reproduzca el video
-                    >
-                        <source src='/video.mp4' type='video/mp4' />
-                        Tu navegador no soporta la etiqueta de video.
-                    </video>
+                    <iframe 
+                        className='w-full rounded-lg shadow-lg size-80 w-96' 
+                        src="https://www.youtube.com/embed/D1mFkYaKOW8" 
+                        frameBorder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowFullScreen 
+                        title="Video de YouTube"
+                    ></iframe>
                 </div>
                 <button 
                     onClick={goToCamera} 
@@ -53,4 +58,3 @@ const Hero = ({ goToCamera }: Props) => {
 };
 
 export default Hero;
-
