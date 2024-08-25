@@ -1,21 +1,23 @@
 "use client"
 import React, { useEffect, useState, useRef } from 'react';
-import CustomWebcam from '@/app/Components/CustomWebcam';
-import Loading from '@/app/Components/Loading';
-import Hero from '@/app/Components/Hero';
-import Team from '@/app/Components/Team';
-import Message from '@/app/Components/Message';
+import CustomWebcam from '@/app/components/CustomWebcam';
+import Loading from '@/app/components/Loading';
+import Hero from '@/app/components/Hero';
+import Team from '@/app/components/Team';
+import Message from '@/app/components/Message';
 import { sendEmail } from '@/actions';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import './globals.css';
+import { useConfetti } from './hooks/useConfetti';
 
 export default function Home() {
   const [showCamera, setShowCamera] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState('');
   const [isFormVisible, setIsFormVisible] = useState(false);
+  const [confetti, setConfetti] = useState(false)
   const formRef = useRef<HTMLDivElement>(null);
+  const { handleConfetti } = useConfetti()
 
   const handlerIA = async (base64: string) => {
     setShowCamera(false);
@@ -49,6 +51,7 @@ export default function Home() {
         toast.error("Error en el envío del email");
         return;
       }
+      setConfetti(true)
       toast.success("Email enviado con éxito");
     } catch (error) {
       toast.error("Error en el envío del email");
@@ -67,6 +70,13 @@ export default function Home() {
     form.reset();
     setIsLoading(false);
   };
+
+  useEffect(() => {
+    if(confetti) {
+      handleConfetti()
+      setConfetti(false)
+    }
+  }, [confetti])
 
   // Hook para manejar la visibilidad del formulario
   useEffect(() => {
@@ -122,6 +132,7 @@ export default function Home() {
 
         {!isLoading && (
           <>
+
             <header>
               <Hero goToCamera={() => setShowCamera(true)} />
             </header>

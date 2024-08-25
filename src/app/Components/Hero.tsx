@@ -1,6 +1,6 @@
 import React from 'react';
 import Camera from '@/app/Icons/Camera';
-import Brand from '@/app/Components/Brand';
+import Brand from '@/app/components/Brand';
 
 interface Props {
     goToCamera: () => void;
@@ -23,7 +23,7 @@ const Hero = ({ goToCamera }: Props) => {
                 
                 
                 {/* Aquí agregamos el video */}
-                <div className='w-full max-w-xs mx-0 mb-6'>
+                <div className='w-full max-w-xl mx-0 mb-6'>
                     <iframe 
                         className='w-full rounded-lg shadow-lg size-80 w-96' 
                         src="https://www.youtube.com/embed/zIn69z4Pwak?si=OWv7P3_e-jj-mV0P"

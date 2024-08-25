@@ -1,5 +1,4 @@
 import React from 'react';
-import './estilos/style.css'; // Ruta correcta para el archivo CSS
 
 export default function Brand() {
   return (
