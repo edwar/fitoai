@@ -1,6 +1,6 @@
 import { v2 as cloudinary } from 'cloudinary'
 import React from 'react'
-import GallerySwipe from '../components/GallerySwipe'
+import GallerySwipe from '../Components/GallerySwipe'
 
 cloudinary.config({
     cloud_name: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,

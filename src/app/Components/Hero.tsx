@@ -1,6 +1,6 @@
 import React from 'react';
 import Camera from '@/app/Icons/Camera';
-import Brand from '@/app/components/Brand';
+import Brand from '@/app/Components/Brand';
 
 interface Props {
     goToCamera: () => void;

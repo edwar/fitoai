@@ -1,5 +1,6 @@
+
 import React from 'react'
-import Card from '../components/Card'
+import Card from '../Components/Card'
 import { helps } from '../data/help'
 
 export default function Page() {
