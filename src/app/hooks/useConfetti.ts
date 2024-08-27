@@ -1,3 +1,4 @@
+
 import confetti from "canvas-confetti";
 export function useConfetti() {
   const DURATION = 5 * 1000;

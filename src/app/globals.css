@@ -324,6 +324,7 @@ strong {
   30% {
     width: 100px;
   }
+  
   100% {
     width: 0;
   }
@@ -365,22 +366,9 @@ strong {
   background: linear-gradient(-45deg, rgba(95, 145, 255, 1), rgba(0, 0, 255, 0));
   border-radius: 999px;
   filter: drop-shadow(0 0 6px rgba(105, 155, 255, 1));
-  animation:
-    tail 3000ms ease-in-out infinite,
-    shooting 3000ms ease-in-out infinite;
+  animation: tail 3000ms ease-in-out infinite, shooting 3000ms ease-in-out infinite;
   
-  &::before {
-    content: '';
-    position: absolute;
-    top: calc(50% - 1px);
-    right: 0;
-    height: 2px;
-    background: linear-gradient(-45deg, rgba(0, 0, 255, 0), rgba(95, 145, 255, 1), rgba(0, 0, 255, 0));
-    transform: translateX(50%) rotateZ(45deg);
-    border-radius: 100%;
-    animation: shining 3000ms ease-in-out infinite;
-  }
-
+  &::before,
   &::after {
     content: '';
     position: absolute;
@@ -388,247 +376,49 @@ strong {
     right: 0;
     height: 2px;
     background: linear-gradient(-45deg, rgba(0, 0, 255, 0), rgba(95, 145, 255, 1), rgba(0, 0, 255, 0));
-    transform: translateX(50%) rotateZ(45deg);
     border-radius: 100%;
     animation: shining 3000ms ease-in-out infinite;
-    transform: translateX(50%) rotateZ(-45deg);
   }
-  
-  &:nth-child(1) {
-    animation-delay: 6495ms;
-    top: calc(50% - 184px);
-    left: calc(50% - 166px);
-  }
-  &:nth-child(1)::before,
-  &:nth-child(1)::after {
-    animation-delay: 6495ms;
-  }
-  
-  &:nth-child(2) {
-    animation-delay: 1471ms;
-    top: calc(50% - 71px);
-    left: calc(50% - 221px);
-  }
-  &:nth-child(2)::before,
-  &:nth-child(2)::after {
-    animation-delay: 1471ms;
-  }
-  
-  &:nth-child(3) {
-    animation-delay: 8432ms;
-    top: calc(50% - 137px);
-    left: calc(50% - 104px);
-  }
-  &:nth-child(3)::before,
-  &:nth-child(3)::after {
-    animation-delay: 8432ms;
-  }
-  
-  &:nth-child(4) {
-    animation-delay: 2398ms;
-    top: calc(50% - 95px);
-    left: calc(50% - 250px);
-  }
-  &:nth-child(4)::before,
-  &:nth-child(4)::after {
-    animation-delay: 2398ms;
-  }
-  
-  &:nth-child(5) {
-    animation-delay: 4948ms;
-    top: calc(50% - 64px);
-    left: calc(50% - 315px);
-  }
-  &:nth-child(5)::before,
-  &:nth-child(5)::after {
-    animation-delay: 4948ms;
-  }
-  
-  &:nth-child(6) {
-    animation-delay: 6521ms;
-    top: calc(50% - 200px);
-    left: calc(50% - 198px);
-  }
-  &:nth-child(6)::before,
-  &:nth-child(6)::after {
-    animation-delay: 6521ms;
-  }
-  
-  &:nth-child(7) {
-    animation-delay: 9314ms;
-    top: calc(50% - 150px);
-    left: calc(50% - 188px);
-  }
-  &:nth-child(7)::before,
-  &:nth-child(7)::after {
-    animation-delay: 9314ms;
-  }
-  
-  &:nth-child(8) {
-    animation-delay: 3917ms;
-    top: calc(50% - 121px);
-    left: calc(50% - 132px);
-  }
-  &:nth-child(8)::before,
-  &:nth-child(8)::after {
-    animation-delay: 3917ms;
-  }
-  
-  &:nth-child(9) {
-    animation-delay: 7809ms;
-    top: calc(50% - 144px);
-    left: calc(50% - 158px);
-  }
-  &:nth-child(9)::before,
-  &:nth-child(9)::after {
-    animation-delay: 7809ms;
-  }
-  
-  &:nth-child(10) {
-    animation-delay: 5276ms;
-    top: calc(50% - 134px);
-    left: calc(50% - 113px);
-  }
-  &:nth-child(10)::before,
-  &:nth-child(10)::after {
-    animation-delay: 5276ms;
-  }
-  
-  &:nth-child(11) {
-    animation-delay: 2512ms;
-    top: calc(50% - 93px);
-    left: calc(50% - 200px);
-  }
-  &:nth-child(11)::before,
-  &:nth-child(11)::after {
-    animation-delay: 2512ms;
-  }
-  
-  &:nth-child(12) {
-    animation-delay: 6749ms;
-    top: calc(50% - 187px);
-    left: calc(50% - 172px);
-  }
-  &:nth-child(12)::before,
-  &:nth-child(12)::after {
-    animation-delay: 6749ms;
-  }
-  
-  &:nth-child(13) {
-    animation-delay: 3897ms;
-    top: calc(50% - 108px);
-    left: calc(50% - 189px);
-  }
-  &:nth-child(13)::before,
-  &:nth-child(13)::after {
-    animation-delay: 3897ms;
-  }
-  
-  &:nth-child(14) {
-    animation-delay: 9356ms;
-    top: calc(50% - 120px);
-    left: calc(50% - 250px);
-  }
-  &:nth-child(14)::before,
-  &:nth-child(14)::after {
-    animation-delay: 9356ms;
-  }
-  
-  &:nth-child(15) {
-    animation-delay: 4672ms;
-    top: calc(50% - 96px);
-    left: calc(50% - 276px);
-  }
-  &:nth-child(15)::before,
-  &:nth-child(15)::after {
-    animation-delay: 4672ms;
-  }
-  
-  &:nth-child(16) {
-    animation-delay: 8934ms;
-    top: calc(50% - 174px);
-    left: calc(50% - 211px);
-  }
-  &:nth-child(16)::before,
-  &:nth-child(16)::after {
-    animation-delay: 8934ms;
-  }
-  
-  &:nth-child(17) {
-    animation-delay: 1729ms;
-    top: calc(50% - 84px);
-    left: calc(50% - 140px);
-  }
-  &:nth-child(17)::before,
-  &:nth-child(17)::after {
-    animation-delay: 1729ms;
-  }
-  
-  &:nth-child(18) {
-    animation-delay: 6782ms;
-    top: calc(50% - 191px);
-    left: calc(50% - 176px);
-  }
-  &:nth-child(18)::before,
-  &:nth-child(18)::after {
-    animation-delay: 6782ms;
-  }
-  
-  &:nth-child(19) {
-    animation-delay: 5235ms;
-    top: calc(50% - 141px);
-    left: calc(50% - 193px);
-  }
-  &:nth-child(19)::before,
-  &:nth-child(19)::after {
-    animation-delay: 5235ms;
-  }
-  
-  &:nth-child(20) {
-    animation-delay: 4298ms;
-    top: calc(50% - 77px);
-    left: calc(50% - 245px);
-  }
-  &:nth-child(20)::before,
-  &:nth-child(20)::after {
-    animation-delay: 4298ms;
-  }
-}
 
-@keyframes tail {
-  0% {
-    width: 0;
-  }
-  
-  30% {
-    width: 100px;
-  }
-  
-  100% {
-    width: 0;
-  }
-}
-
-@keyframes shining {
-  0% {
-    width: 0;
-  }
-  
-  50% {
-    width: 30px;
-  }
-  
-  100% {
-    width: 0;
-  }
-}
-
-@keyframes shooting {
-  0% {
-    transform: translateX(0);
-  }
-  
-  100% {
-    transform: translateX(300px);
-  }
+  /* Distribución de las estrellas */
+  &:nth-child(1) { animation-delay: 6495ms; top: 10%; left: 10%; }
+  &:nth-child(2) { animation-delay: 1471ms; top: 20%; left: 80%; }
+  &:nth-child(3) { animation-delay: 8432ms; top: 30%; left: 30%; }
+  &:nth-child(4) { animation-delay: 2398ms; top: 40%; left: 70%; }
+  &:nth-child(5) { animation-delay: 4948ms; top: 50%; left: 20%; }
+  &:nth-child(6) { animation-delay: 6521ms; top: 60%; left: 60%; }
+  &:nth-child(7) { animation-delay: 9314ms; top: 70%; left: 40%; }
+  &:nth-child(8) { animation-delay: 3917ms; top: 80%; left: 90%; }
+  &:nth-child(9) { animation-delay: 7809ms; top: 90%; left: 50%; }
+  &:nth-child(10) { animation-delay: 5276ms; top: 15%; left: 65%; }
+  &:nth-child(11) { animation-delay: 2512ms; top: 25%; left: 35%; }
+  &:nth-child(12) { animation-delay: 6749ms; top: 35%; left: 75%; }
+  &:nth-child(13) { animation-delay: 3897ms; top: 45%; left: 25%; }
+  &:nth-child(14) { animation-delay: 9356ms; top: 55%; left: 55%; }
+  &:nth-child(15) { animation-delay: 4672ms; top: 65%; left: 15%; }
+  &:nth-child(16) { animation-delay: 8934ms; top: 75%; left: 85%; }
+  &:nth-child(17) { animation-delay: 1729ms; top: 85%; left: 45%; }
+  &:nth-child(18) { animation-delay: 6782ms; top: 95%; left: 5%; }
+  &:nth-child(19) { animation-delay: 5235ms; top: 5%; left: 55%; }
+  &:nth-child(20) { animation-delay: 4298ms; top: 15%; left: 100%; }
+  &:nth-child(21) { animation-delay: 4298ms; top: 20%; left: 32%; }
+  &:nth-child(22) { animation-delay: 4298ms; top: 25%; left: 56%; }
+  &:nth-child(23) { animation-delay: 4298ms; top: 30%; left: 125%; }
+  &:nth-child(24) { animation-delay: 4298ms; top: 35%; left: 125%; }
+  &:nth-child(25) { animation-delay: 4298ms; top: 36%; left: 125%; }
+  &:nth-child(26) { animation-delay: 4298ms; top: 20%; left: 125%; }
+  &:nth-child(27) { animation-delay: 4298ms; top: 10%; left: 125%; }
+  &:nth-child(28) { animation-delay: 4298ms; top: 13%; left: 125%; }
+  &:nth-child(29) { animation-delay: 4298ms; top: 12%; left: 125%; }
+  &:nth-child(30) { animation-delay: 4298ms; top: 40%; left: 125%; }
+  &:nth-child(31) { animation-delay: 4298ms; top: 34%; left: 125%; }
+  &:nth-child(32) { animation-delay: 5678ms; top: 18%; left: 25%; }
+  &:nth-child(33) { animation-delay: 2345ms; top: 22%; left: 75%; }
+  &:nth-child(34) { animation-delay: 6789ms; top: 28%; left: 35%; }
+  &:nth-child(35) { animation-delay: 3456ms; top: 34%; left: 5%; }
+  &:nth-child(36) { animation-delay: 8901ms; top: 40%; left: 55%; }
+  &:nth-child(37) { animation-delay: 4567ms; top: 46%; left: 65%; }
+  &:nth-child(38) { animation-delay: 5678ms; top: 52%; left: 15%; }
+  &:nth-child(39) { animation-delay: 6789ms; top: 58%; left: 85%; }
+  &:nth-child(40) { animation-delay: 7890ms; top: 64%; left: 30%; }
 }
