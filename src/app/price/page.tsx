@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from 'react';
 import './estilo.css';
 
@@ -24,20 +24,11 @@ export default function Page() {
   ];
 
   const filteredFruits = fruits.filter(fruit =>
-    fruit.name.toLowerCase().includes(searchTerm.toLowerCase())
+    fruit.name.toLowerCase().startsWith(searchTerm.toLowerCase())
   );
 
   return (
     <div className="fruit-catalog">
-      <div className="search-container">
-        <input
-          type="text"
-          placeholder="Buscar frutas..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="search-input"
-        />
-      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-11 gap-x-0 mx-48 py-36">
         {filteredFruits.map((fruit, index) => (
           <article key={index} className='card'>
@@ -53,6 +44,15 @@ export default function Page() {
             <img src={fruit.soloImage} alt={`${fruit.name} solo`} />
           </article>
         ))}
+      </div>
+      <div className="search-container">
+        <input
+          type="text"
+          placeholder="Buscar frutas..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="search-input"
+        />
       </div>
     </div>
   );
