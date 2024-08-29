@@ -1,29 +1,37 @@
-/* estilo.css */
-
 /* Estilo para el input de búsqueda */
 .search-container {
-  
-  text-align: right; /* Alinea el input a la derecha */
-  margin: 20px; /* Ajusta el margen según sea necesario */
+  position: fixed; /* Asegura que el contenedor del buscador esté en una posición fija en la pantalla */
+  top: 100px; /* Ajusta la distancia desde la parte superior de la página */
+  right: 5px; /* Ajusta la distancia desde el borde derecho de la pantalla */
+  z-index: 1000; /* Asegura que el buscador esté encima de otros elementos */
 }
 
 .search-input {
   display: inline-block;
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 16px;
-  width: 200px; /* Ajusta el ancho del input si es necesario */
-  color: black;
+  padding: 10px; /* Aumenta el relleno para hacer el input más grande */
+  border: 2px solid #0075fc; /* Cambia el color del borde para hacerlo más visible */
+  border-radius: 5px; /* Aumenta el radio de bordes para hacerlo más prominente */
+  font-size: 18px; /* Aumenta el tamaño de la fuente para mejorar la legibilidad */
+  width: 230px; /* Ajusta el ancho del input para hacerlo más grande */
+  color: whitesmoke; /* Cambia el color del texto para un mejor contraste */
   background-color: transparent;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 2px solid #4b5563;
+  
 }
-.search-input:focus{
-  border-bottom: cyan;
+
+.search-input:focus {
+  border-color: #3b82f6; /* Cambia el color del borde al enfocarse para hacerlo más visible */
+  outline: none; /* Elimina el contorno predeterminado al enfocarse */
 }
 
+.fruit-catalog {
+  position: relative; /* Asegúrate de que el contenedor principal tenga posición relativa */
+}
 
-
-
+/* Otros estilos */
 article {
   position: relative;
   width: 250px;
