@@ -1,5 +1,5 @@
-
 import confetti from "canvas-confetti";
+
 export function useConfetti() {
   const DURATION = 5 * 1000;
   const ANIMATION_END = Date.now() + DURATION;
@@ -10,11 +10,12 @@ export function useConfetti() {
   }
 
   const handleConfetti = () => {
-    const interval = setInterval(function () {
+    // Tipado explícito para interval
+    const interval: number = window.setInterval(function () {
       const timeLeft = ANIMATION_END - Date.now();
 
       if (timeLeft <= 0) {
-        return clearInterval(interval);
+        return window.clearInterval(interval);
       }
 
       const particleCount = 50 * (timeLeft / DURATION);
