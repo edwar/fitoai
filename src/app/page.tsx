@@ -139,7 +139,7 @@ export default function Home() {
             <main className={`${message ? 'overflow-hidden' : ''} flex flex-col`}>
               <Team />
               <div className='relative py-8 px-4 lg:py-12 lg:px-6'>
-                <h2 className='text-2xl font-bold text-center mb-10 text-slate-50 animate-bounce'>
+                <h2 className='text-2xl font-bold text-center mb-10 text-slate-50 animate-bounce' id='contactanos'>
                   Contáctanos
                 </h2>
                 <div 

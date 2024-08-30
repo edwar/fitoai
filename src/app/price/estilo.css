@@ -1,11 +1,25 @@
-/* Estilo para el input de búsqueda */
+/* Estilo para el contenedor de búsqueda */
+
 .search-container {
-  position: fixed; /* Asegura que el contenedor del buscador esté en una posición fija en la pantalla */
+  position: fixed; /* Asegura que el contenedor esté en una posición fija en la pantalla */
   top: 100px; /* Ajusta la distancia desde la parte superior de la página */
-  right: 5px; /* Ajusta la distancia desde el borde derecho de la pantalla */
-  z-index: 1000; /* Asegura que el buscador esté encima de otros elementos */
+  right: 20px; /* Ajusta la distancia desde el borde derecho de la pantalla */
+  z-index: 1000; /* Asegura que el contenedor esté encima de otros elementos */
+  display: flex; /* Usa flexbox para alinear el icono y el input */
+  align-items: center; /* Alinea verticalmente el icono y el input */
 }
 
+/* Estilo para el icono de búsqueda */
+.search-icon {
+  font-size: 24px; /* Ajusta el tamaño del icono */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el icono */
+  background: transparent; /* Elimina el fondo del botón */
+  border: none; /* Elimina el borde del botón */
+  color: #0075fc; /* Cambia el color del icono */
+  margin-right: 10px; /* Añade espacio entre el icono y el input */
+}
+
+/* Estilo para el input de búsqueda */
 .search-input {
   display: inline-block;
   padding: 10px; /* Aumenta el relleno para hacer el input más grande */
@@ -15,29 +29,28 @@
   width: 230px; /* Ajusta el ancho del input para hacerlo más grande */
   color: whitesmoke; /* Cambia el color del texto para un mejor contraste */
   background-color: transparent;
-  border-top: 0px;
-  border-left: 0px;
-  border-right: 0px;
-  border-bottom: 2px solid #4b5563;
-  
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 2px solid #4b5563; /* Cambia el color del borde inferior */
+  transition: width 0.3s ease; /* Añade una transición suave para el ancho */
 }
 
+
+/* Estilo para cuando el input está enfocado */
 .search-input:focus {
-  border-color: #3b82f6; /* Cambia el color del borde al enfocarse para hacerlo más visible */
+  border-color: #3b82f6; /* Cambia el color del borde al enfocarse */
   outline: none; /* Elimina el contorno predeterminado al enfocarse */
 }
 
-.fruit-catalog {
-  position: relative; /* Asegúrate de que el contenedor principal tenga posición relativa */
-}
-
-/* Otros estilos */
+/* Estilo para las cards de frutas */
 article {
   position: relative;
   width: 250px;
   transition: all 0.3s ease;
 }
 
+/* Estilo para la imagen principal de la card */
 article img:first-child {
   box-shadow: 0 60px 60px -60px rgba(0, 30, 255, 0.5);
   border-radius: 4px;
@@ -45,6 +58,7 @@ article img:first-child {
   width: 100%;
 }
 
+/* Estilo para la imagen adicional de la card */
 article img:last-child {
   position: absolute;
   width: 200px;
@@ -57,6 +71,7 @@ article img:last-child {
   opacity: 0;
 }
 
+/* Estilo para los detalles de la card */
 article .details {
   position: absolute;
   top: 10px;
@@ -69,15 +84,18 @@ article .details {
   z-index: 1;
 }
 
+/* Estilo para el precio en la card */
 article .price {
   font-size: 16px;
   margin-top: 5px;
 }
 
+/* Estilo para el efecto de hover en la card */
 article:hover {
   transform: perspective(250px) rotateX(10deg) translateY(-5%) translateZ(0);
 }
 
+/* Estilo para el fondo degradado de la card */
 article::before {
   content: "";
   position: absolute;
@@ -94,10 +112,12 @@ article::before {
   transition: all 0.3s ease;
 }
 
+/* Estilo para mostrar el fondo degradado en hover */
 article:hover::before {
   opacity: 1;
 }
 
+/* Estilo para mostrar la imagen adicional en hover */
 article:hover img:last-child {
   opacity: 1;
   transform: translateY(10%);
