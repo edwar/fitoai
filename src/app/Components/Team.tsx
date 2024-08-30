@@ -80,7 +80,7 @@ const Team = () => {
               <span className='text-gray-400 line-clamp-2'>Estudiante</span>
               <p className='mt-3 mb-4 font-light text-gray-400 line-clamp-3'>Diseño de pagina y editora de contenidos</p>
               <div className='flex space-x-4 mt-3'>
-                <a href='https://www.whatsapp.com' target='_blank' rel='noopener noreferrer' className='text-gray-400 hover:text-green-500'>
+                <a href="https://wa.me/573146070586?text=Hola%20me%20interesa%20más%20información" target='_blank' rel='noopener noreferrer' className='text-gray-400 hover:text-green-500'>
                   <FontAwesomeIcon icon={faWhatsapp} size='2x' />
                 </a>
                 <a href='https://www.facebook.com' target='_blank' rel='noopener noreferrer' className='text-gray-400 hover:text-blue-500'>
@@ -103,7 +103,7 @@ const Team = () => {
               <span className='text-gray-400 line-clamp-2'>Estudiante</span>
               <p className='mt-3 mb-4 font-light text-gray-400 line-clamp-3'>Programador</p>
               <div className='flex space-x-4 mt-3'>
-                <a href='https://www.whatsapp.com' target='_blank' rel='noopener noreferrer' className='text-gray-400 hover:text-green-500'>
+                <a href="https://wa.me/573134550474?text=Hola%20me%20interesa%20más%20información" target='_blank' rel='noopener noreferrer' className='text-gray-400 hover:text-green-500'>
                   <FontAwesomeIcon icon={faWhatsapp} size='2x' />
                 </a>
                 <a href='https://www.facebook.com' target='_blank' rel='noopener noreferrer' className='text-gray-400 hover:text-blue-500'>
@@ -126,7 +126,7 @@ const Team = () => {
               <span className='text-gray-400 line-clamp-2'>Estudiante</span>
               <p className='mt-3 mb-4 font-light text-gray-400 line-clamp-3'>Programador</p>
               <div className='flex space-x-4 mt-3'>
-                <a href='https://www.whatsapp.com' target='_blank' rel='noopener noreferrer' className='text-gray-400 hover:text-green-500'>
+                <a href="https://wa.me/573134550453?text=Hola%20me%20interesa%20más%20información" target='_blank' rel='noopener noreferrer' className='text-gray-400 hover:text-green-500'>
                   <FontAwesomeIcon icon={faWhatsapp} size='2x' />
                 </a>
                 <a href='https://www.facebook.com' target='_blank' rel='noopener noreferrer' className='text-gray-400 hover:text-blue-500'>
@@ -149,7 +149,7 @@ const Team = () => {
               <span className='text-gray-400 line-clamp-2'>Estudiante</span>
               <p className='mt-3 mb-4 font-light text-gray-400 line-clamp-3'>Diseñador de pagina web</p>
               <div className='flex space-x-4 mt-3'>
-                <a href='https://www.whatsapp.com' target='_blank' rel='noopener noreferrer' className='text-gray-400 hover:text-green-500'>
+                <a href="https://wa.me/573203896944?text=Hola%20me%20interesa%20más%20información" target='_blank' rel='noopener noreferrer' className='text-gray-400 hover:text-green-500'>
                   <FontAwesomeIcon icon={faWhatsapp} size='2x' />
                 </a>
                 <a href='https://www.facebook.com' target='_blank' rel='noopener noreferrer' className='text-gray-400 hover:text-blue-500'>
