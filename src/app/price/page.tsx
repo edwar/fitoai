@@ -1,12 +1,10 @@
-"use client"
+"use client";
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import './estilo.css';
 
 export default function Page() {
   const [searchTerm, setSearchTerm] = useState('');
-  const [showSearch, setShowSearch] = useState(false);
 
   const prices = {
     mango: { perPound: 2500, perKilo: 5000, perUnit: 1200 },
@@ -47,34 +45,43 @@ export default function Page() {
   );
 
   return (
-    <div className="fruit-catalog">
-      <div className={`search-container ${showSearch ? 'show' : ''}`}>
-        <button className="search-icon" onClick={() => setShowSearch(!showSearch)}>
-          <FontAwesomeIcon icon={faMagnifyingGlass} />
-        </button>
-        <input
-          type="text"
-          placeholder="Buscar frutas..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="search-input"
-        />
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-11 gap-x-0 mx-48 py-36">
-        {filteredFruits.map((fruit, index) => (
-          <article key={index} className='card'>
-            <img src={fruit.image} alt={fruit.name} />
-            <div className="details">
-              <h2>{fruit.emoji} {fruit.name}</h2>
-              <div className="price">{`$${fruit.price.perPound} COP`}</div>
-              <div className="additional-prices">
-                <div>{`Por kilo: $${fruit.price.perKilo} COP`}</div>
-                <div>{`Por unidad: $${fruit.price.perUnit} COP`}</div>
+    <div className="fruit-catalog bg-gray-900 min-h-screen pt-20">
+      <div className="container mx-auto px-4 py-8">
+        <div className="search-container mb-8">
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="Buscar frutas..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full p-2 pl-10 rounded bg-gray-700 text-white"
+            />
+            <FontAwesomeIcon icon={faMagnifyingGlass} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+          </div>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredFruits.map((fruit, index) => (
+            <div key={index} className="relative overflow-hidden rounded-lg shadow-lg transition-transform transform group hover:scale-105">
+              <img src={fruit.image} alt={fruit.name} className="w-full h-48 object-cover" />
+              <div className="absolute inset-0 flex flex-col justify-end p-4">
+                <div className="relative z-10">
+                  <h2 className="text-xl font-bold text-white mb-2">{fruit.emoji} {fruit.name}</h2>
+                  <div className="text-lg font-semibold text-green-400 mb-1">{`$${fruit.price.perPound} COP`}</div>
+                  <div className="text-sm text-gray-200">
+                    <div>{`Por kilo: $${fruit.price.perKilo} COP`}</div>
+                    <div>{`Por unidad: $${fruit.price.perUnit} COP`}</div>
+                  </div>
+                </div>
+                <div className="absolute inset-0 bg-black transition-opacity duration-200 opacity-60 group-hover:opacity-20" />
+                <img 
+                  src={fruit.soloImage} 
+                  alt={`${fruit.name} solo`} 
+                  className="absolute bottom-0 right-0 w-1/2 h-auto transform translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300" 
+                />
               </div>
             </div>
-            <img src={fruit.soloImage} alt={`${fruit.name} solo`} />
-          </article>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

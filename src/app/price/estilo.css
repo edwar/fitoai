@@ -1,57 +1,56 @@
 /* Estilo para el contenedor de búsqueda */
-
 .search-container {
-  position: fixed; /* Asegura que el contenedor esté en una posición fija en la pantalla */
-  top: 100px; /* Ajusta la distancia desde la parte superior de la página */
-  right: 20px; /* Ajusta la distancia desde el borde derecho de la pantalla */
-  z-index: 1000; /* Asegura que el contenedor esté encima de otros elementos */
-  display: flex; /* Usa flexbox para alinear el icono y el input */
-  align-items: center; /* Alinea verticalmente el icono y el input */
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
 }
 
 /* Estilo para el icono de búsqueda */
 .search-icon {
-  font-size: 24px; /* Ajusta el tamaño del icono */
-  cursor: pointer; /* Cambia el cursor al pasar sobre el icono */
-  background: transparent; /* Elimina el fondo del botón */
-  border: none; /* Elimina el borde del botón */
-  color: #0075fc; /* Cambia el color del icono */
-  margin-right: 10px; /* Añade espacio entre el icono y el input */
+  font-size: 24px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  color: #0075fc;
+  margin-right: 10px;
 }
 
 /* Estilo para el input de búsqueda */
 .search-input {
   display: inline-block;
-  padding: 10px; /* Aumenta el relleno para hacer el input más grande */
-  border: 2px solid #0075fc; /* Cambia el color del borde para hacerlo más visible */
-  border-radius: 5px; /* Aumenta el radio de bordes para hacerlo más prominente */
-  font-size: 18px; /* Aumenta el tamaño de la fuente para mejorar la legibilidad */
-  width: 230px; /* Ajusta el ancho del input para hacerlo más grande */
-  color: whitesmoke; /* Cambia el color del texto para un mejor contraste */
+  padding: 10px;
+  border: 2px solid #0075fc;
+  border-radius: 5px;
+  font-size: 18px;
+  width: 230px;
+  color: whitesmoke;
   background-color: transparent;
   border-top: 0;
   border-left: 0;
   border-right: 0;
-  border-bottom: 2px solid #4b5563; /* Cambia el color del borde inferior */
-  transition: width 0.3s ease; /* Añade una transición suave para el ancho */
+  border-bottom: 2px solid #4b5563;
+  transition: width 0.3s ease;
 }
-
 
 /* Estilo para cuando el input está enfocado */
 .search-input:focus {
-  border-color: #3b82f6; /* Cambia el color del borde al enfocarse */
-  outline: none; /* Elimina el contorno predeterminado al enfocarse */
+  border-color: #3b82f6;
+  outline: none;
 }
 
 /* Estilo para las cards de frutas */
-article {
+article.card {
   position: relative;
   width: 250px;
   transition: all 0.3s ease;
+  margin: 0 auto;
 }
 
 /* Estilo para la imagen principal de la card */
-article img:first-child {
+article.card img:first-child {
   box-shadow: 0 60px 60px -60px rgba(0, 30, 255, 0.5);
   border-radius: 4px;
   object-fit: cover;
@@ -59,7 +58,7 @@ article img:first-child {
 }
 
 /* Estilo para la imagen adicional de la card */
-article img:last-child {
+article.card img:last-child {
   position: absolute;
   width: 200px;
   bottom: 0;
@@ -72,7 +71,7 @@ article img:last-child {
 }
 
 /* Estilo para los detalles de la card */
-article .details {
+article.card .details {
   position: absolute;
   top: 10px;
   left: 10px;
@@ -85,18 +84,18 @@ article .details {
 }
 
 /* Estilo para el precio en la card */
-article .price {
+article.card .price {
   font-size: 16px;
   margin-top: 5px;
 }
 
 /* Estilo para el efecto de hover en la card */
-article:hover {
+article.card:hover {
   transform: perspective(250px) rotateX(10deg) translateY(-5%) translateZ(0);
 }
 
 /* Estilo para el fondo degradado de la card */
-article::before {
+article.card::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -113,12 +112,25 @@ article::before {
 }
 
 /* Estilo para mostrar el fondo degradado en hover */
-article:hover::before {
+article.card:hover::before {
   opacity: 1;
 }
 
 /* Estilo para mostrar la imagen adicional en hover */
-article:hover img:last-child {
+article.card:hover img:last-child {
   opacity: 1;
   transform: translateY(10%);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .search-container {
+    position: static;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  article.card {
+    width: 100%;
+  }
 }
