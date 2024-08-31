@@ -51,7 +51,7 @@ export default function Page() {
           <div className="relative">
             <input
               type="text"
-              placeholder="Buscar frutas..."
+              placeholder="Buscar frutas/verduras..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full p-2 pl-10 rounded bg-gray-700 text-white"
