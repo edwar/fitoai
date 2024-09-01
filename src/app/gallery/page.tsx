@@ -27,7 +27,11 @@ export default async function Page() {
       });
   return (
     <section className='min-h-screen pt-28 wrapper p-4 md:p-8 lg:p-10'>
-        <GallerySwipe sources={sources} galleryID='gallery' />
-    </section>
-  )
+            <div className="text-container" style={{ marginTop: '50px', marginBottom: '30px', textAlign: 'center' }}>
+                <h1 className="marquee-text">Bienvenido a la galería  📷</h1>
+                <p style={{ fontSize: '1.5em', color: '#666666', textShadow: '1px 1px 0px white' }}>Aquí encontrarás fotos y videos relacionados con la agricultura.</p>
+            </div>
+            <GallerySwipe sources={sources} galleryID='gallery' />
+        </section>
+    )
 }

@@ -421,3 +421,19 @@ strong {
   &:nth-child(39) { animation-delay: 6789ms; top: 58%; left: 85%; }
   &:nth-child(40) { animation-delay: 7890ms; top: 64%; left: 30%; }
 }
+/*Texto galeria animacion*/
+.marquee-text {
+  font-size: 3em;
+  color: #0bca4a;
+  text-shadow: 2px 2px 0px white;
+  animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+      transform: translateX(-100%);
+  }
+  100% {
+      transform: translateX(100%);
+  }
+}
