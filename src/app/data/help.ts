@@ -39,16 +39,21 @@ export const helps = [
         description:`<p class="lg:text-left mb-6 font-light lg:mb-8 lg:text-lg text-gray-400">
         <br/><strong class="text-2xl">1. Injerto de aguacate </strong><br/>
         El aguacate es un cultivo popular en Colombia, y los injertos se utilizan para mejorar la calidad y la producción de los árboles.   <br/>     
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/MbJ--Mg32ms?si=jtJ6T7VbD2RK55N-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         <br/><strong class="text-2xl">2. Injerto de mango:</strong><br/>
         El mango es otro cultivo importante en la región, y los injertos pueden usarse para cultivar variedades específicas con características deseadas, como tamaño de fruta y resistencia a enfermedades. <br/>       
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/RUMmPhW0Uz8?si=yL3RYFkkqdkPWJB2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         <br/><strong class="text-2xl">3. Injerto de naranja</strong><br/>
         Los cítricos son comunes en Colombia, y los injertos se usan para mejorar la calidad de la fruta y la resistencia a enfermedades.  <br/>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/IGrHvRTF2sc?si=dHKUHyw4IzDCMW27" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         <br/><strong class="text-2xl">4.Injerto de Limón</strong><br/>
         Los limoneros son populares en muchas regiones de Colombia, y los injertos pueden utilizarse para mejorar la producción y la resistencia a enfermedades.<br/><br/>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/H_AzbOxIcWI?si=F-RpENiRLl2rHCe5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         <br/><strong class="text-2xl">5.Injerto de árboles ornamentales</strong><br/>
         Además de los cultivos de frutas, también puede haber una demanda de injertos en árboles ornamentales para paisajismo y jardinería.<br/><br/>
-        <br/><strong class="text-2xl">6.Injerto de ciruelo</strong><br/>
-        Aunque no tan común como algunos otros cultivos, el ciruelo también se cultiva en algunas regiones de Colombia. Los injertos pueden ser utilizados para mejorar la producción y la calidad de las ciruelas.<br/><br/>`
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/NB1ORAvWWt0?si=NyZ9Yo2Q0F-b82ie" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+        `
 
     },
     {
