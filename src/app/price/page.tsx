@@ -328,39 +328,45 @@ export default function Pagina() {
         </div>
 
         {frutaSeleccionada && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-            <div className="bg-white rounded-lg p-6 max-w-2xl w-full m-4 relative opacity-80">
-              <button 
-                onClick={cerrarPopup}
-                className="absolute top-2 right-2 text-gray-600 hover:text-gray-800"
-              >
-                <FontAwesomeIcon icon={faTimes} />
-              </button>
-              <div className="flex flex-col md:flex-row">
-                <img 
-                  src={frutaSeleccionada.imagenSola} 
-                  alt={frutaSeleccionada.nombre} 
-                  className="w-full md:w-1/3 object-contain mb-4 md:mb-0 md:mr-4"
-                />
-                <div className=" text-black">
-                  <h2 className="text-2xl font-bold mb-2">{frutaSeleccionada.emoji} {frutaSeleccionada.nombre}</h2>
-                  <h3 className="text-xl font-semibold mb-2">Información Nutricional</h3>
-                  <ul className="list-disc list-inside mb-4">
-                    <li>Calorías: {frutaSeleccionada.infoNutricional.calorias}</li>
-                    <li>Grasas totales: {frutaSeleccionada.infoNutricional.grasas}</li>
-                    <li>Carbohidratos: {frutaSeleccionada.infoNutricional.carbohidratos}</li>
-                    <li>Proteínas: {frutaSeleccionada.infoNutricional.proteinas}</li>
-                    <li>Vitamina C: {frutaSeleccionada.infoNutricional.vitaminaC}</li>
-                    <li>Calcio: {frutaSeleccionada.infoNutricional.calcio}</li>
-                    <li>Hierro: {frutaSeleccionada.infoNutricional.hierro}</li>
-                  </ul>
-                  
-                </div>
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div 
+            className="rounded-lg p-6 max-w-2xl w-full m-4 relative"
+            style={{
+              backgroundImage: "url('/frutas/fondoprice1.jpg')",
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          >
+            <button 
+              onClick={cerrarPopup}
+              className="absolute top-2 right-2 text-black hover:text-gray-700"
+            >
+              <FontAwesomeIcon icon={faTimes} />
+            </button>
+            <div className="flex flex-col md:flex-row">
+              <img 
+                src={frutaSeleccionada.imagenSola} 
+                alt={frutaSeleccionada.nombre} 
+                className="w-full md:w-1/3 object-contain mb-4 md:mb-0 md:mr-4"
+              />
+              <div className="text-white bg-black bg-opacity-50 p-4 rounded">
+                <h2 className="text-2xl font-bold mb-2">{frutaSeleccionada.emoji} {frutaSeleccionada.nombre}</h2>
+                <h3 className="text-xl font-semibold mb-2">Información Nutricional</h3>
+                <ul className="list-disc list-inside mb-4">
+                  <li>Calorías: {frutaSeleccionada.infoNutricional.calorias}</li>
+                  <li>Grasas totales: {frutaSeleccionada.infoNutricional.grasas}</li>
+                  <li>Carbohidratos: {frutaSeleccionada.infoNutricional.carbohidratos}</li>
+                  <li>Proteínas: {frutaSeleccionada.infoNutricional.proteinas}</li>
+                  <li>Vitamina C: {frutaSeleccionada.infoNutricional.vitaminaC}</li>
+                  <li>Calcio: {frutaSeleccionada.infoNutricional.calcio}</li>
+                  <li>Hierro: {frutaSeleccionada.infoNutricional.hierro}</li>
+                </ul>
               </div>
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
+    </div>
     </div>
   );
 }
