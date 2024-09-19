@@ -299,74 +299,89 @@ export default function Pagina() {
             <FontAwesomeIcon icon={faMagnifyingGlass} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
           </div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {frutasFiltradas.map((fruta, indice) => (
-            <div 
-              key={indice} 
-              className="relative overflow-hidden rounded-lg shadow-lg transition-transform transform group hover:scale-105 cursor-pointer"
-              onClick={() => manejarClicFruta(fruta)}
-            >
-              <img src={fruta.imagen} alt={fruta.nombre} className="w-full h-48 object-cover" />
-              <div className="absolute inset-0 flex flex-col justify-end p-4">
-                <div className="relative z-10">
-                  <h2 className="text-xl font-bold text-white mb-2">{fruta.emoji} {fruta.nombre}</h2>
-                  <div className="text-lg font-semibold text-green-400 mb-1">{`$${fruta.precio.porLibra} COP`}</div>
-                  <div className="text-sm text-gray-200">
-                    <div>{`Por kilo: $${fruta.precio.porKilo} COP`}</div>
-                    <div>{`Por unidad: $${fruta.precio.porUnidad} COP`}</div>
+        {frutasFiltradas.length > 0 ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {frutasFiltradas.map((fruta, indice) => (
+              <div 
+                key={indice} 
+                className="relative overflow-hidden rounded-lg shadow-lg transition-transform transform group hover:scale-105 cursor-pointer"
+                onClick={() => manejarClicFruta(fruta)}
+              >
+                <img src={fruta.imagen} alt={fruta.nombre} className="w-full h-48 object-cover" />
+                <div className="absolute inset-0 flex flex-col justify-end p-4">
+                  <div className="relative z-10">
+                    <h2 className="text-xl font-bold text-white mb-2">{fruta.emoji} {fruta.nombre}</h2>
+                    <div className="text-lg font-semibold text-green-400 mb-1">{`$${fruta.precio.porLibra} COP`}</div>
+                    <div className="text-sm text-gray-200">
+                      <div>{`Por kilo: $${fruta.precio.porKilo} COP`}</div>
+                      <div>{`Por unidad: $${fruta.precio.porUnidad} COP`}</div>
+                    </div>
                   </div>
+                  <div className="absolute inset-0 bg-black transition-opacity duration-200 opacity-60 group-hover:opacity-20" />
+                  <img 
+                    src={fruta.imagenSola} 
+                    alt={`${fruta.nombre} sola`} 
+                    className="absolute bottom-0 right-0 w-1/2 h-auto transform translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300" 
+                  />
                 </div>
-                <div className="absolute inset-0 bg-black transition-opacity duration-200 opacity-60 group-hover:opacity-20" />
-                <img 
-                  src={fruta.imagenSola} 
-                  alt={`${fruta.nombre} sola`} 
-                  className="absolute bottom-0 right-0 w-1/2 h-auto transform translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300" 
-                />
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+        ) : (
+    <div className="text-center text-white text-xl">
+      
+    No se han encontrado frutas/verduras relacionadas.
+
+    <div>
+    <img 
+    src="aca el gift" 
+    alt="GIF relacionado" 
+    className="mt-4 mx-auto" 
+          />
         </div>
+    </div>
+        )}
 
         {frutaSeleccionada && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div 
-            className="rounded-lg p-6 max-w-2xl w-full m-4 relative"
-            style={{
-              backgroundImage: "url('/frutas/fondoprice1.jpg')",
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-            }}
-          >
-            <button 
-              onClick={cerrarPopup}
-              className="absolute top-2 right-2 text-black hover:text-gray-700"
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+            <div 
+              className="rounded-lg p-6 max-w-2xl w-full m-4 relative"
+              style={{
+                backgroundImage: "url('/frutas/fondoprice2.jpg')",
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
             >
-              <FontAwesomeIcon icon={faTimes} />
-            </button>
-            <div className="flex flex-col md:flex-row">
-              <img 
-                src={frutaSeleccionada.imagenSola} 
-                alt={frutaSeleccionada.nombre} 
-                className="w-full md:w-1/3 object-contain mb-4 md:mb-0 md:mr-4"
-              />
-              <div className="text-white bg-black bg-opacity-50 p-4 rounded">
-                <h2 className="text-2xl font-bold mb-2">{frutaSeleccionada.emoji} {frutaSeleccionada.nombre}</h2>
-                <h3 className="text-xl font-semibold mb-2">Información Nutricional</h3>
-                <ul className="list-disc list-inside mb-4">
-                  <li>Calorías: {frutaSeleccionada.infoNutricional.calorias}</li>
-                  <li>Grasas totales: {frutaSeleccionada.infoNutricional.grasas}</li>
-                  <li>Carbohidratos: {frutaSeleccionada.infoNutricional.carbohidratos}</li>
-                  <li>Proteínas: {frutaSeleccionada.infoNutricional.proteinas}</li>
-                  <li>Vitamina C: {frutaSeleccionada.infoNutricional.vitaminaC}</li>
-                  <li>Calcio: {frutaSeleccionada.infoNutricional.calcio}</li>
-                  <li>Hierro: {frutaSeleccionada.infoNutricional.hierro}</li>
-                </ul>
+              <button 
+                onClick={cerrarPopup}
+                className="absolute top-2 right-2 text-black hover:text-gray-700"
+              >
+                <FontAwesomeIcon icon={faTimes} />
+              </button>
+              <div className="flex flex-col md:flex-row">
+                <img 
+                  src={frutaSeleccionada.imagenSola} 
+                  alt={frutaSeleccionada.nombre} 
+                  className="w-full md:w-1/3 object-contain mb-4 md:mb-0 md:mr-4"
+                />
+                <div className="text-white bg-black bg-opacity-50 p-4 rounded">
+                  <h2 className="text-2xl font-bold mb-2">{frutaSeleccionada.emoji} {frutaSeleccionada.nombre}</h2>
+                  <h3 className="text-xl font-semibold mb-2">Información Nutricional</h3>
+                  <ul className="list-disc list-inside mb-4">
+                    <li>Calorías: {frutaSeleccionada.infoNutricional.calorias}</li>
+                    <li>Grasas totales: {frutaSeleccionada.infoNutricional.grasas}</li>
+                    <li>Carbohidratos: {frutaSeleccionada.infoNutricional.carbohidratos}</li>
+                    <li>Proteínas: {frutaSeleccionada.infoNutricional.proteinas}</li>
+                    <li>Vitamina C: {frutaSeleccionada.infoNutricional.vitaminaC}</li>
+                    <li>Calcio: {frutaSeleccionada.infoNutricional.calcio}</li>
+                    <li>Hierro: {frutaSeleccionada.infoNutricional.hierro}</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      )}
-    </div>
+        )}
+      </div>
     </div>
   );
 }
