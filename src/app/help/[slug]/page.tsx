@@ -1,6 +1,7 @@
 "use client"
 import React from 'react'
 import { helps } from '@/app/data/help'
+import { AccordionComponent } from '@/app/components/Accordion'
 
 type Props = {
     params: {
@@ -20,7 +21,7 @@ export default function Page({ params: { slug } } : Readonly<Props>) {
             <>
                 <h1 className='text-white text-4xl font-semibold'>{help.title}</h1>
                 <img className='w-1/3 float-left' src={help.image} alt={`Imagen de ${help.title}`} />
-                <p className='text-white text-balance font-light' dangerouslySetInnerHTML={{ __html: help.description }} />
+                <AccordionComponent items={help.items} />
             </>
         } 
     </div>

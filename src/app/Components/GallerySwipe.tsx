@@ -67,20 +67,20 @@ export default function GallerySwipe({ sources, galleryID }: Readonly<{sources: 
                 Your browser does not support the video tag.
               </video>
               <button className='absolute top-3 right-6' onClick={() => close()}>
-                <svg xmlns="http://www.w3.org/2000/svg" className="text-gray-400 w-8 h-8 hover:text-white" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <svg xmlns="http://www.w3.org/2000/svg" className="text-gray-400 w-8 h-8 hover:text-white" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" strokeLinecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                   <path d="M18 6l-12 12" />
                   <path d="M6 6l12 12" />
                 </svg>
               </button>
                 <button className='absolute z-50 top-1/2 -left-1 transform -translate-y-1/2' onClick={movePrev}>
-                  <svg xmlns="http://www.w3.org/2000/svg" className="text-gray-400 w-16 h-14 hover:text-white" width="68" height="68" viewBox="0 0 24 24" stroke-width="0.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="text-gray-400 w-16 h-14 hover:text-white" width="68" height="68" viewBox="0 0 24 24" stroke-width="0.5" stroke="currentColor" fill="none" strokeLinecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <path d="M15 6l-6 6l6 6" />
                   </svg>
                 </button>
                 <button className='absolute z-50 top-1/2 right-0 transform -translate-y-1/2' onClick={moveNext}>
-                  <svg xmlns="http://www.w3.org/2000/svg" className="text-gray-400 w-14 h-14 hover:text-white" width="68" height="68" viewBox="0 0 24 24" stroke-width="0.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="text-gray-400 w-14 h-14 hover:text-white" width="68" height="68" viewBox="0 0 24 24" stroke-width="0.5" stroke="currentColor" fill="none" strokeLinecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <path d="M9 6l6 6l-6 6" />
                   </svg>
