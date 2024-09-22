@@ -1,10 +1,10 @@
 "use client"
 import React, { useEffect, useState, useRef } from 'react';
-import CustomWebcam from '@/app/Components/CustomWebcam';
-import Loading from '@/app/Components/Loading';
-import Hero from '@/app/Components/Hero';
-import Team from '@/app/Components/Team';
-import Message from '@/app/Components/Message';
+import CustomWebcam from '@/app/components/CustomWebcam';
+import Loading from '@/app/components/Loading';
+import Hero from '@/app/components/Hero';
+import Team from '@/app/components/Team';
+import Message from '@/app/components/Message';
 import { sendEmail } from '@/actions';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';

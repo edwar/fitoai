@@ -1,14 +1,9 @@
 "use client"
-import React, { useEffect } from 'react';
 import Link from 'next/link';
-import Logo from './Logo'; // Asegúrate de que la ruta de importación sea correcta
-import { ShoppingBag, Share2, Send, Youtube, Facebook, Instagram } from 'lucide-react';
+import Logo from '@/app/components/Logo'; // Asegúrate de que la ruta de importación sea correcta
+import { Share2, Send, Youtube, Facebook, Instagram } from 'lucide-react';
 
 const Footer = () => {
-  useEffect(() => {
-    // Simulando la función feather.replace()
-    console.log('Iconos reemplazados');
-  }, []);
 
   return (
     <footer className="relative mt-[300px] pt-[300px] pb-12 text-white bg-black">

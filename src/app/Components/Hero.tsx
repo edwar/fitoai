@@ -1,6 +1,6 @@
 import React from 'react';
 import Camera from '@/app/Icons/Camera';
-import Brand from '@/app/Components/Brand';
+import Brand from '@/app/components/Brand';
 import YouTube from 'react-youtube';
 
 interface Props {

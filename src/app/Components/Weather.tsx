@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 
 const Weather = () => {
-  const [weatherData, setWeatherData] = useState(null);
+  const [weatherData, setWeatherData] = useState<any>(null);
 
   const fetchData = async () => {
     try {

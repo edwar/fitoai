@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect } from 'react'
 import Link from 'next/link'
-import Brand from '@/app/Components/Brand'
+import Brand from '@/app/components/Brand'
 import { usePathname } from 'next/navigation'
 export default function Navbar() {
   const pathname = usePathname()
