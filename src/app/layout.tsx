@@ -23,10 +23,10 @@ export default function RootLayout({
         <div className='h-auto bg-slate-900'>
           <Navbar />
           {children}
+          <Weather />
           <Footer />
         </div>
       </body>
-          <Weather />
     </html>
   );
 }

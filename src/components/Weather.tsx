@@ -22,7 +22,7 @@ const Weather = () => {
   }, []);
 
   return (
-    <div className='fixed top-32 right-5'>
+    <div className='fixed bottom-5 lg:top-32 right-5 z-[99999]'>
       {weatherData ? (
         <div className="group w-24 h-24 hover:w-64 hover:h-auto cursor-pointer border b-gray-400 rounded flex flex-col justify-center items-center text-center p-6 bg-white">
           <div className="text-md font-bold flex flex-col text-gray-900 invisible group-hover:visible"><span className="uppercase">Hoy</span> <span className="font-normal text-gray-700 text-sm">{new Date().toLocaleDateString("es-CO", { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' })}</span></div>
