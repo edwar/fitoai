@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
 import { helps } from '@/app/data/help'
-import { AccordionComponent } from '@/app/components/Accordion'
+import { AccordionComponent } from '@/components/Accordion'
 
 type Props = {
     params: {

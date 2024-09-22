@@ -2,12 +2,12 @@
 import React, { useCallback, useRef, useState } from 'react'
 import { isMobile } from 'react-device-detect';
 import Webcam from 'react-webcam';
-import Flip from '../Icons/Flip';
-import Trash from '../Icons/Trash';
-import Launch from '../Icons/Launch';
-import Camera from '../Icons/Camera';
-import Close from '../Icons/Close';
-import Mirror from '../Icons/Mirror';
+import Flip from '../app/Icons/Flip';
+import Trash from '../app/Icons/Trash';
+import Launch from '../app/Icons/Launch';
+import Camera from '../app/Icons/Camera';
+import Close from '../app/Icons/Close';
+import Mirror from '../app/Icons/Mirror';
 
 interface FacingMode {
     exact: 'user' | 'environment'

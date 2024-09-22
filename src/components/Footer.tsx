@@ -1,6 +1,6 @@
 "use client"
 import Link from 'next/link';
-import Logo from '@/app/components/Logo'; // Asegúrate de que la ruta de importación sea correcta
+import Logo from '@/components/Logo'; // Asegúrate de que la ruta de importación sea correcta
 import { Share2, Send, Youtube, Facebook, Instagram } from 'lucide-react';
 
 const Footer = () => {

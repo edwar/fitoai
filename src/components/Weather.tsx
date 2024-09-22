@@ -7,7 +7,7 @@ const Weather = () => {
   const fetchData = async () => {
     try {
       const response = await fetch(
-        'https://api.openweathermap.org/data/2.5/weather?q=Tocaima&units=metric&appid=08d65516a38a93d18281658b4e508313'
+        `https://api.openweathermap.org/data/2.5/weather?q=Tocaima&units=metric&appid=${process.env.NEXT_PUBLIC_WEATHER_API}`
       );
       const data = await response.json()
       setWeatherData(data);
