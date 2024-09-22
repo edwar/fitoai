@@ -24,9 +24,9 @@ const Weather = () => {
   return (
     <div className='fixed top-32 right-5'>
       {weatherData ? (
-        <div className="w-64 cursor-pointer border b-gray-400 rounded flex flex-col justify-center items-center text-center p-6 bg-white">
-          <div className="text-md font-bold flex flex-col text-gray-900"><span className="uppercase">Hoy</span> <span className="font-normal text-gray-700 text-sm">{new Date().toLocaleDateString("es-CO", { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' })}</span></div>
-          <div className="w-32 h-32 flex items-center justify-center">
+        <div className="group w-24 h-24 hover:w-64 hover:h-auto cursor-pointer border b-gray-400 rounded flex flex-col justify-center items-center text-center p-6 bg-white">
+          <div className="text-md font-bold flex flex-col text-gray-900 invisible group-hover:visible"><span className="uppercase">Hoy</span> <span className="font-normal text-gray-700 text-sm">{new Date().toLocaleDateString("es-CO", { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' })}</span></div>
+          <div className="w-10 h-10 group-hover:w-32 group-hover:h-32 flex items-center justify-center">
             <svg className="h-20" viewBox="0 0 81 73" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                     <g id="Desktop-HD" transform="translate(-174.000000, -308.000000)" fill-rule="nonzero">
@@ -41,8 +41,8 @@ const Weather = () => {
             </svg>
           </div>
           <p className="text-gray-700 mb-2">{weatherData.name}</p>
-          <div className="text-3xl font-bold text-gray-900 mb-6">{weatherData.main.temp_min.toFixed(1)}°C</div>
-          <div className="flex justify-between w-full">
+          <div className="text-3xl font-bold text-gray-900 mb-6 invisible group-hover:visible">{weatherData.main.temp_min.toFixed(1)}°C</div>
+          <div className="flex justify-between w-full invisible group-hover:visible">
             <div className="flex items-center text-gray-700 px-2">
               <svg className="mr-2 h-4" viewBox="0 0 11 18" version="1.1" xmlns="http://www.w3.org/2000/svg">
                   <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">

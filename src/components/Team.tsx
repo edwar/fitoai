@@ -59,12 +59,12 @@ const Team = () => {
         </div>
         <div className="flex overflow-hidden space-x-72 group mb-5 md:mb-0">
           <div className="flex space-x-72 animate-loop-scroll">
-            <p className='font-light lg:mb-16 sm:text-xl text-gray-400 text-nowrap max-w-none'>Somos un equipo de estudiantes de la institucion educativa departamental Hernan Venegas Carrillo</p>
-            <p className='font-light lg:mb-16 sm:text-xl text-gray-400 text-nowrap max-w-none'>Somos un equipo de estudiantes de la institucion educativa departamental Hernan Venegas Carrillo</p>
+            <p className='font-light lg:mb-16 sm:text-xl text-gray-400 whitespace-nowrap max-w-full'>Somos un equipo de estudiantes de la institucion educativa departamental Hernan Venegas Carrillo</p>
+            <p className='font-light lg:mb-16 sm:text-xl text-gray-400 whitespace-nowrap max-w-full'>Somos un equipo de estudiantes de la institucion educativa departamental Hernan Venegas Carrillo</p>
           </div>
           <div className="flex space-x-72 animate-loop-scroll" aria-hidden="true">
-            <p className='font-light lg:mb-16 sm:text-xl text-gray-400 text-nowrap max-w-none'>Somos un equipo de estudiantes de la institucion educativa departamental Hernan Venegas Carrillo</p>
-            <p className='font-light lg:mb-16 sm:text-xl text-gray-400 text-nowrap max-w-none'>Somos un equipo de estudiantes de la institucion educativa departamental Hernan Venegas Carrillo</p>
+            <p className='font-light lg:mb-16 sm:text-xl text-gray-400 whitespace-nowrap max-w-full'>Somos un equipo de estudiantes de la institucion educativa departamental Hernan Venegas Carrillo</p>
+            <p className='font-light lg:mb-16 sm:text-xl text-gray-400 whitespace-nowrap max-w-full'>Somos un equipo de estudiantes de la institucion educativa departamental Hernan Venegas Carrillo</p>
           </div>
         </div>
         <div className='grid px-10 gap-16 mb-6 lg:mb-16 md:grid-cols-2'>
