@@ -50,7 +50,7 @@ const CustomWebcam = ({ callback, close }: Props) => {
     }
 
     return (
-        <div className='absolute bg-slate-800 inset-0 overflow-hidden z-50'>
+        <div className='fixed bg-slate-800 inset-0 overflow-hidden z-50'>
             {imgSrc ? (
                 <img src={imgSrc} alt='webcam' className='absolute object-cover w-full h-full' />
             ) : (
