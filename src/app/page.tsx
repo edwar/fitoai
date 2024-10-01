@@ -78,7 +78,6 @@ export default function Home() {
     }
   }, [confetti])
 
-  // Hook para manejar la visibilidad del formulario
   useEffect(() => {
     const handleScroll = () => {
       if (formRef.current) {
@@ -92,7 +91,7 @@ export default function Home() {
     };
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Verificar la visibilidad inicial
+    handleScroll();
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -123,7 +122,7 @@ export default function Home() {
               <span className="wave-container">
                 {splitText('Enviando tu mensaje')}
               </span>
-              <span className="wave-container mt-4"> {/* Ajuste de margen superior */}
+              <span className="wave-container mt-4">
                 {splitText('Esto podría tardar unos momentos...')}
               </span>
             </div>
@@ -132,7 +131,6 @@ export default function Home() {
 
         {!isLoading && (
           <>
-
             <header>
               <Hero goToCamera={() => setShowCamera(true)} />
             </header>
@@ -144,94 +142,110 @@ export default function Home() {
                 </h2>
                 <div 
                   ref={formRef}
-                  className={`bg-slate-800 rounded-lg p-8 space-y-8 mx-auto max-w-xl ${isFormVisible ? 'slide-in' : ''}`}  // Modificado: max-w-lg a max-w-xl
+                  className={`max-w-md mx-auto ${isFormVisible ? 'slide-in' : ''}`}
                 >
-                  <form onSubmit={handleSubmit}>
-                    <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
-                      <div className='relative'>
+                  <form onSubmit={handleSubmit} className="bg-slate-800 rounded-lg p-8 space-y-6">
+                    <div className="grid md:grid-cols-2 md:gap-6">
+                      <div className="relative z-0 w-full mb-5 group">
                         <input 
-                          id='names'
-                          name='names' 
-                          className='peer placeholder-transparent h-12 w-full border-b-2 border-slate-600 text-white focus:border-blue-500 outline-none bg-transparent' 
                           type="text" 
-                          placeholder='Nombres' 
-                          required 
-                          autoComplete='off'
+                          name="names" 
+                          id="names"
+                          autoComplete="off"
+                          className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-b-neutral-600 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" 
+                          placeholder=" "
+                          required
                         />
-                        <label htmlFor='names' className='absolute left-0 top-2 text-gray-600 text-sm transition-all duration-300 transform -translate-y-4 scale-75 origin-top-left peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-2 peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-gray-600'>
+                        <label 
+                          htmlFor="names" 
+                          className="peer-focus:font-medium absolute text-sm text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                        >
                           Nombres
                         </label>
                       </div>
-                      <div className='relative'>
+                      <div className="relative z-0 w-full mb-5 group">
                         <input 
-                          id='lastNames'
-                          name='lastNames' 
-                          className='peer placeholder-transparent h-12 w-full border-b-2 border-slate-600 text-white focus:border-blue-500 outline-none bg-transparent' 
                           type="text" 
-                          placeholder='Apellidos' 
+                          name="lastNames" 
+                          id="lastNames"
+                          autoComplete="off"
+                          className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-b-neutral-600 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" 
+                          placeholder=" "
                           required 
-                          autoComplete='off'
                         />
-                        <label htmlFor='lastNames' className='absolute left-0 top-2 text-gray-600 text-sm transition-all duration-300 transform -translate-y-4 scale-75 origin-top-left peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-2 peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-gray-600'>
+                        <label 
+                          htmlFor="lastNames" 
+                          className="peer-focus:font-medium absolute text-sm text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                        >
                           Apellidos
                         </label>
                       </div>
                     </div>
-                    <div className='relative mt-6'>
+                    <div className="relative z-0 w-full mb-5 group">
                       <input 
-                        id='email'
-                        name='email' 
-                        className='peer placeholder-transparent h-12 w-full border-b-2 border-slate-600 text-white focus:border-blue-500 outline-none bg-transparent' 
                         type="email" 
-                        placeholder='Correo electrónico' 
+                        name="email" 
+                        id="email"
+                        autoComplete="off"
+                        className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-b-neutral-600 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" 
+                        placeholder=" "
                         required 
-                        autoComplete='off'
                       />
-                      <label htmlFor='email' className='absolute left-0 top-2 text-gray-600 text-sm transition-all duration-300 transform -translate-y-4 scale-75 origin-top-left peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-2 peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-gray-600'>
+                      <label 
+                        htmlFor="email" 
+                        className="peer-focus:font-medium absolute text-sm text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                      >
                         Correo electrónico
                       </label>
                     </div>
-                    <div className='relative mt-6'>
+                    <div className="relative z-0 w-full mb-5 group">
                       <select 
-                        id='subject'
-                        name='subject' 
-                        className='peer placeholder-transparent h-12 w-full border-b-2 border-slate-600 text-white focus:border-blue-500 outline-none bg-transparent appearance-none' 
+                        name="subject" 
+                        id="subject"
+                        autoComplete="off"
+                        className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-b-neutral-600 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" 
                         required
                       >
-                        <option value="" className="text-gray-600 bg-white">Selecciona el asunto</option>
-                        <option value="queja" className="text-black bg-white">Queja</option>
-                        <option value="duda" className="text-black bg-white">Duda</option>
-                        <option value="sugerencia" className="text-black bg-white">Sugerencia</option>
+                        <option value="" className="text-gray-600 bg-slate-800">Selecciona el asunto</option>
+                        <option value="queja" className="text-white bg-slate-800">Queja</option>
+                        <option value="duda" className="text-white bg-slate-800">Duda</option>
+                        <option value="sugerencia" className="text-white bg-slate-800">Sugerencia</option>
                       </select>
-                      <label htmlFor='subject' className='absolute left-0 top-2 text-gray-600 text-sm transition-all duration-300 transform -translate-y-4 scale-75 origin-top-left peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-2 peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-gray-600'>
+                      <label 
+                        htmlFor="subject" 
+                        className="peer-focus:font-medium absolute text-sm text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                      >
                         Asunto
                       </label>
                     </div>
-                    <div className='relative mt-6'>
+                    <div className="relative z-0 w-full mb-5 group">
                       <textarea 
-                        id='text'
-                        name='text' 
-                        className='peer placeholder-transparent h-24 w-full border-b-2 border-slate-600 text-white focus:border-blue-500 outline-none bg-transparent' 
-                        placeholder='Mensaje' 
+                        name="text" 
+                        id="text"
+                        rows={4}
+                        autoComplete="off"
+                        className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-b-neutral-600 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" 
+                        placeholder=" "
                         required
                       ></textarea>
-                      <label htmlFor='text' className='absolute left-0 top-2 text-gray-600 text-sm transition-all duration-300 transform -translate-y-4 scale-75 origin-top-left peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-2 peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-gray-600'>
+                      <label 
+                        htmlFor="text" 
+                        className="peer-focus:font-medium absolute text-sm text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                      >
                         Mensaje
                       </label>
                     </div>
-                    <div className='flex justify-center mt-6'>
-                      <button
-                        className={`w-3/6 h-12 rounded-lg flex items-center justify-center ${isLoading ? 'bg-gray-500 cursor-not-allowed' : 'bg-green-500 hover:bg-indigo-600  transition-transform duration-300 scale-100 hover:scale-105 align-middle'} transition-colors duration-300`}
-                        type="submit"
-                        disabled={isLoading}
-                      >
-                        {isLoading ? (
-                          <div className="w-5 h-5 border-4 border-t-4 border-white border-solid rounded-full animate-spin"></div>
-                        ) : (
-                          "Enviar"
-                        )}
-                      </button>
-                    </div>
+                    <button
+                      type="submit"
+                      disabled={isLoading}
+                      className={`btn-enviar w-full text-white ${isLoading ? '' : ''} focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-colors duration-300`}
+                    >
+                      {isLoading ? (
+                        <div className="w-5 h-5 border-4 border-t-4 border-white border-solid rounded-full animate-spin mx-auto"></div>
+                      ) : (
+                        "Enviar"
+                      )}
+                    </button>
                   </form>
                 </div>
                 <Message message={message} close={() => setMessage('')} />

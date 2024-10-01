@@ -41,7 +41,7 @@ const Weather = () => {
             </svg>
           </div>
           <p className="text-gray-700 mb-2">{weatherData.name}</p>
-          <div className="text-3xl font-bold text-gray-900 mb-6 invisible group-hover:visible">{weatherData.main.temp_min.toFixed(1)}°C</div>
+          <div className="text-3xl font-bold text-gray-900 mb-6 invisible group-hover:visible">{weatherData.main?.temp_min.toFixed(1)}°C</div>
           <div className="flex justify-between w-full invisible group-hover:visible">
             <div className="flex items-center text-gray-700 px-2">
               <svg className="mr-2 h-4" viewBox="0 0 11 18" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -57,7 +57,7 @@ const Weather = () => {
                       </g>
                   </g>
               </svg>
-              {weatherData.main.humidity}%
+              {weatherData.main?.humidity}%
             </div>
             <div className="flex items-center text-gray-700 px-2">
               <svg className="mr-2 h-4 w-4" viewBox="0 0 12 21" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -78,7 +78,7 @@ const Weather = () => {
                   </g>
                 </g>
               </svg>
-              {weatherData.wind.speed} m/s
+              {weatherData.wind?.speed} m/s
             </div>
           </div>
         </div>
