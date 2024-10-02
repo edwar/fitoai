@@ -70,11 +70,11 @@ const Footer = () => {
       <div id="particles-js" className="absolute inset-0"></div>
       <div className="container mx-auto max-w-7xl px-4 relative z-10">
         <div className="text-center mb-8">
-          <Link href='/' className='flex gap-3 justify-center items-center text-2xl font-semibold text-white'> 
+          <div className='flex gap-3 justify-center items-center text-2xl font-semibold text-white'> 
             <Logo />
-            <span className="logo text-8xl font-['Monoton']">Fito AI</span>
-          </Link>
-          <h2 className="text-3xl font-bold text-[#555560]">Inteligencia Artificial para Diagnóstico de Plantas</h2>
+            <span className="logo text-8xl font-['Monoton'] my-10 text-slate-200">Fito AI</span>
+          </div>
+          <h2 className="text-3xl font-bold text-[#fdfdff]">Inteligencia Artificial para Diagnóstico de Plantas</h2>
         </div>
         <div className="footer__columns flex flex-col md:flex-row justify-between gap-8">
           <div className="footer__col">
