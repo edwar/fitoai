@@ -71,7 +71,7 @@ const Team = () => {
           {/* Miembros del equipo */}
           <div className='flex flex-col sm:flex-row items-center rounded-lg shadow bg-gray-800 border-gray-700 hover:scale-90 duration-700'>
             <div className='w-full sm:w-1/3 h-full'>
-              <img className='max-h-max h-full aspect-auto rounded-t-lg sm:rounded-none sm:rounded-l-lg' src='/team/angela.webp' alt='Angela' />
+              <img className='max-h-max h-full aspect-auto rounded-t-lg sm:rounded-none sm:rounded-l-lg' src='foto angela' alt='Angela' />
             </div>
             <div className='w-full sm:w-2/3 p-5'>
               <h3 className='text-xl font-bold tracking-tight text-white line-clamp-1'>
@@ -94,7 +94,7 @@ const Team = () => {
           </div> 
           <div className='flex flex-col sm:flex-row items-center rounded-lg shadow bg-gray-800 border-gray-700 hover:scale-90 duration-700'>
             <div className='w-full sm:w-1/3 h-full'>
-              <img className='max-h-max h-full aspect-auto rounded-t-lg sm:rounded-none sm:rounded-l-lg' src='/team/santiago.jpg' alt='Santiago' />
+              <img className='max-h-max h-full aspect-auto rounded-t-lg sm:rounded-none sm:rounded-l-lg' src='santiago' alt='Santiago' />
             </div>
             <div className='w-full sm:w-2/3 p-5'>
               <h3 className='text-xl font-bold tracking-tight text-white line-clamp-1'>
@@ -117,7 +117,7 @@ const Team = () => {
           </div> 
           <div className='flex flex-col sm:flex-row items-center rounded-lg shadow bg-gray-800 border-gray-700 hover:scale-90 duration-700'>
             <div className='w-full sm:w-1/3 h-full'>
-              <img className='max-h-max h-full aspect-auto rounded-t-lg sm:rounded-none sm:rounded-l-lg' src='/team/nicolas.jpg' alt='Nicolas' />
+              <img className='max-h-max h-full aspect-auto rounded-t-lg sm:rounded-none sm:rounded-l-lg' src='nicolas' alt='Nicolas' />
             </div>
             <div className='w-full sm:w-2/3 p-5'>
               <h3 className='text-xl font-bold tracking-tight text-white line-clamp-1'>
@@ -140,7 +140,7 @@ const Team = () => {
           </div> 
           <div className='flex flex-col sm:flex-row items-center rounded-lg shadow bg-gray-800 border-gray-700 hover:scale-90 duration-700'>
             <div className='w-full sm:w-1/3 h-full'>
-              <img className='max-h-max h-full aspect-auto rounded-t-lg sm:rounded-none sm:rounded-l-lg' src='/team/emmanuel.webp' alt='Emmanuel' />
+              <img className='max-h-max h-full aspect-auto rounded-t-lg sm:rounded-none sm:rounded-l-lg' src='soto' alt='Emmanuel' />
             </div>
             <div className='w-full sm:w-2/3 p-5'>
               <h3 className='text-xl font-bold tracking-tight text-white line-clamp-1'>
